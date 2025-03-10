@@ -1,4 +1,4 @@
-=== WordPress Job Board and Recruitment Plugin - JobWP ===
+=== JobWP - Job Board, Job Listing, Career Page and Recruitment Plugin ===
 Contributors: hmplugin, mhmrajib, freemius
 Donate link: https://www.paypal.me/mhmrajib
 Tags: career, job board, job listing, jobs, job manager

@@ -148,9 +148,13 @@ class JobWp_Admin {
             return;
         }
         $jobwpGeneralMessage = false;
-        // Content
         if ( isset( $_POST['updateGeneralSettings'] ) ) {
-            $jobwpGeneralMessage = $this->jobwp_set_general_settings( $_POST );
+            if ( !isset( $_POST['jobwp_general_nonce_field'] ) || !wp_verify_nonce( $_POST['jobwp_general_nonce_field'], 'jobwp_general_action_filed' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpGeneralMessage = $this->jobwp_set_general_settings( $_POST );
+            }
         }
         $jobwpGeneralSettings = $this->jobwp_get_general_settings();
         require_once JOBWP_PATH . 'admin/view/general.php';
@@ -167,12 +171,22 @@ class JobWp_Admin {
         $jobwpListingMessage = false;
         // Content
         if ( isset( $_POST['updateListingContent'] ) ) {
-            $jobwpListingMessage = $this->jobwp_set_listing_content_settings( $_POST );
+            if ( !isset( $_POST['jobwp_listing_content_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_listing_content_nonce'], 'jobwp_listing_content_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpListingMessage = $this->jobwp_set_listing_content_settings( $_POST );
+            }
         }
         $jobwpListingContent = $this->jobwp_get_listing_content_settings();
         // Style
         if ( isset( $_POST['updateListingStyles'] ) ) {
-            $jobwpListingMessage = $this->jobwp_set_listing_styles_settings( $_POST );
+            if ( !isset( $_POST['jobwp_listing_styles_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_listing_styles_nonce'], 'jobwp_listing_styles_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpListingMessage = $this->jobwp_set_listing_styles_settings( $_POST );
+            }
         }
         $jobwpListingStyles = $this->jobwp_get_listing_styles_settings();
         require_once JOBWP_PATH . 'admin/view/listing.php';
@@ -189,11 +203,21 @@ class JobWp_Admin {
         $jobwpSearchMessage = false;
         // Content
         if ( isset( $_POST['updateSearchContent'] ) ) {
-            $jobwpSearchMessage = $this->jobwp_set_search_content_settings( $_POST );
+            if ( !isset( $_POST['jobwp_search_content_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_search_content_nonce'], 'jobwp_search_content_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpSearchMessage = $this->jobwp_set_search_content_settings( $_POST );
+            }
         }
         // Style
         if ( isset( $_POST['updateSearchStyles'] ) ) {
-            $jobwpSearchMessage = $this->jobwp_set_search_styles_settings( $_POST );
+            if ( !isset( $_POST['jobwp_search_style_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_search_style_nonce'], 'jobwp_search_style_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpSearchMessage = $this->jobwp_set_search_styles_settings( $_POST );
+            }
         }
         $jobwpSearchContent = $this->jobwp_get_search_content_settings();
         $jobwpSearchStyles = $this->jobwp_get_search_styles_settings();
@@ -208,12 +232,22 @@ class JobWp_Admin {
         $jobwpSingleMessage = false;
         // Content
         if ( isset( $_POST['updateSingleContent'] ) ) {
-            $jobwpSingleMessage = $this->jobwp_set_single_content_settings( $_POST );
+            if ( !isset( $_POST['jobwp_single_content_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_single_content_nonce'], 'jobwp_single_content_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpSingleMessage = $this->jobwp_set_single_content_settings( $_POST );
+            }
         }
         $jobwpSingleContent = $this->jobwp_get_single_content_settings();
         // Style
         if ( isset( $_POST['updateSingleStyles'] ) ) {
-            $jobwpSingleMessage = $this->jobwp_set_single_styles_settings( $_POST );
+            if ( !isset( $_POST['jobwp_single_style_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_single_style_nonce'], 'jobwp_single_style_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpSingleMessage = $this->jobwp_set_single_styles_settings( $_POST );
+            }
         }
         $jobwpSingleStyles = $this->jobwp_get_single_styles_settings();
         require_once JOBWP_PATH . 'admin/view/single.php';
@@ -226,7 +260,12 @@ class JobWp_Admin {
         $jobwpEmailMessage = false;
         // Content
         if ( isset( $_POST['updateSettings'] ) ) {
-            $jobwpEmailMessage = $this->jobwp_set_email_settings( $_POST );
+            if ( !isset( $_POST['jobwp_email_settings_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_email_settings_nonce'], 'jobwp_email_settings_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpEmailMessage = $this->jobwp_set_email_settings( $_POST );
+            }
         }
         $jobwpEmailSettings = $this->jobwp_get_email_settings();
         require_once JOBWP_PATH . 'admin/view/email.php';
@@ -243,12 +282,22 @@ class JobWp_Admin {
         $jobwpApplyFormMessage = false;
         // Content
         if ( isset( $_POST['updateApplyFormContent'] ) ) {
-            $jobwpApplyFormMessage = $this->jobwp_set_apply_form_content_settings( $_POST );
+            if ( !isset( $_POST['jobwp_apply_form_content_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_apply_form_content_nonce'], 'jobwp_apply_form_content_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpApplyFormMessage = $this->jobwp_set_apply_form_content_settings( $_POST );
+            }
         }
         $jobwpApplyFormContent = $this->jobwp_get_apply_form_content_settings();
         // Style
         if ( isset( $_POST['updateApplyFormStyle'] ) ) {
-            $jobwpApplyFormMessage = $this->jobwp_set_apply_form_style_settings( $_POST );
+            if ( !isset( $_POST['jobwp_apply_form_style_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_apply_form_style_nonce'], 'jobwp_apply_form_style_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $jobwpApplyFormMessage = $this->jobwp_set_apply_form_style_settings( $_POST );
+            }
         }
         $jobwpApplyFormStyle = $this->jobwp_get_apply_form_style_settings();
         require_once JOBWP_PATH . 'admin/view/apply-form.php';

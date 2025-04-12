@@ -14,7 +14,7 @@ foreach ( $jobwpGeneralSettings as $option_name => $option_value ) {
 
     <div class="settings-banner">
         <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php 
-_e( 'General Settings', JOBWP_TXT_DOMAIN );
+_e( 'General Settings', 'jobwp' );
 ?></h2>
     </div>
 
@@ -31,11 +31,14 @@ if ( $jobwpGeneralMessage ) {
             
             <div class="tab-content">
                 <form name="jobwp_general_settings_form" role="form" class="form-horizontal" method="post" action="" id="jobwp-general-settings-form">
+                <?php 
+wp_nonce_field( 'jobwp_general_action_filed', 'jobwp_general_nonce_field' );
+?>
                     <table class="jobwp-single-settings-table">
                         <tr class="jobwp_admin_noti_email">
                             <th scope="row">
                                 <label><?php 
-_e( 'Admin Notification Email', JOBWP_TXT_DOMAIN );
+_e( 'Admin Notification Email', 'jobwp' );
 ?></label>
                             </th>
                             <td>
@@ -44,7 +47,7 @@ esc_attr_e( $jobwp_admin_noti_email );
 ?>" />
                                 <br>
                                 <code><?php 
-_e( 'An email will sent to this email when a candidate submit an applicaiton.', JOBWP_TXT_DOMAIN );
+_e( 'An email will sent to this email when a candidate submit an applicaiton.', 'jobwp' );
 ?></code>
                             </td>
                         </tr>
@@ -122,7 +125,7 @@ _e( 'You can use external form instead of default application form. Like WPForms
                         <tr class="jobwp_ext_apply_now_url">
                             <th scope="row">
                                 <label for="jobwp_ext_apply_now_url"><?php 
-_e( 'Allow External Application URL', JOBWP_TXT_DOMAIN );
+_e( 'Allow External Application URL', 'jobwp' );
 ?>?</label>
                             </th>
                             <td>
@@ -150,7 +153,7 @@ echo ( $jobwp_hide_jobs_deadline_over ? 'checked' : '' );
                         <tr class="jobwp_allow_login_apply">
                             <th scope="row">
                                 <label for="jobwp_allow_login_apply"><?php 
-_e( 'Allow Login to Apply', JOBWP_TXT_DOMAIN );
+_e( 'Allow Login to Apply', 'jobwp' );
 ?>?</label>
                             </th>
                             <td>
@@ -163,17 +166,18 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
 ?>
                             </td>
                         </tr>
+                        <!-- Captcha -->
                         <tr>
                             <td colspan="2" style="font-size: 18px;">
                                 <hr><b><?php 
-_e( 'Captcha', JOBWP_TXT_DOMAIN );
+_e( 'Captcha', 'jobwp' );
 ?></b><hr>
                             </td>
                         </tr>
                         <tr class="jobwp_recaptcha_site_key">
                             <th scope="row">
                                 <label><?php 
-_e( 'Site Key', JOBWP_TXT_DOMAIN );
+_e( 'Site Key', 'jobwp' );
 ?></label>
                             </th>
                             <td>
@@ -185,7 +189,7 @@ esc_attr_e( stripslashes( $jobwp_recaptcha_site_key ) );
                         <tr class="jobwp_recaptcha_secret_key">
                             <th scope="row">
                                 <label><?php 
-_e( 'Secret Key', JOBWP_TXT_DOMAIN );
+_e( 'Secret Key', 'jobwp' );
 ?></label>
                             </th>
                             <td>
@@ -197,7 +201,7 @@ esc_attr_e( stripslashes( $jobwp_recaptcha_secret_key ) );
                         <tr class="jobwp_captcha_on_apply_form">
                             <th scope="row">
                                 <label for="jobwp_captcha_on_apply_form"><?php 
-_e( 'Enable on Apply Form', JOBWP_TXT_DOMAIN );
+_e( 'Enable on Apply Form', 'jobwp' );
 ?>?</label>
                             </th>
                             <td>
@@ -211,7 +215,7 @@ echo ( $jobwp_captcha_on_apply_form ? 'checked' : '' );
                     <p class="submit">
                         <button id="updateGeneralSettings" name="updateGeneralSettings" class="button button-primary jobwp-button">
                             <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 
-_e( 'Save Settings', JOBWP_TXT_DOMAIN );
+_e( 'Save Settings', 'jobwp' );
 ?>
                         </button>
                     </p>

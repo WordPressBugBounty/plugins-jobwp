@@ -3,8 +3,8 @@ Contributors: hmplugin, mhmrajib, freemius
 Donate link: https://www.paypal.me/mhmrajib
 Tags: career, job board, job listing, jobs, job manager
 Requires at least: 5.4
-Tested up to: 6.7.2
-Stable tag: 2.4.0
+Tested up to: 6.8.1
+Stable tag: 2.4.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -275,6 +275,10 @@ Now go to your detail page and refresh it.
 
 
 == Changelog ==
+
+= 2.4.1 =
+* Freemius SDK upgraded to 2.12.0
+* Code optimized
 
 = 2.4.0 =
 * CSRF checking applied to the General settings page

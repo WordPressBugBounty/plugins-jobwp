@@ -725,6 +725,9 @@ class JobWp_Admin {
     }
 
     protected function jobwp_delete_single_application( $id ) {
+        if ( !current_user_can( 'edit_others_posts' ) ) {
+            exit;
+        }
         global $wpdb;
         $table_name = $wpdb->base_prefix . 'jobwp_applied';
         $resume = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table_name} WHERE job_id = %d", $id ), ARRAY_A );

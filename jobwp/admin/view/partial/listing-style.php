@@ -17,7 +17,7 @@ wp_nonce_field( 'jobwp_listing_styles_action', 'jobwp_listing_styles_nonce' );
     <table class="jobwp-listing-style-settings-table">
         <!-- Job Item -->
         <tr>
-            <th scope="row" colspan="6">
+            <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
 _e( 'Job Item', JOBWP_TXT_DOMAIN );
 ?></span><hr>
@@ -55,7 +55,7 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
         </tr>
         <!-- Title -->
         <tr>
-            <th scope="row" colspan="6">
+            <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
 _e( 'Job Title', JOBWP_TXT_DOMAIN );
 ?></span><hr>
@@ -85,9 +85,47 @@ esc_attr_e( $jobwp_listing_title_font_size );
                 <code>px</code>
             </td>
         </tr>
+        <!-- Company -->
+        <tr>
+            <th scope="row" colspan="6" style="text-align: left;">
+                <hr><span><?php 
+_e( 'Company', JOBWP_TXT_DOMAIN );
+?></span><hr>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Color', JOBWP_TXT_DOMAIN );
+?>:</label>
+            </th>
+            <td>
+                <?php 
+?>
+					<span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+					<?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Size', JOBWP_TXT_DOMAIN );
+?>:</label>
+            </th>
+            <td>
+                <?php 
+?>
+					<span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+					<?php 
+?>
+            </td>
+        </tr>
         <!-- Overview -->
         <tr>
-            <th scope="row" colspan="6">
+            <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
 _e( 'Job Overview', JOBWP_TXT_DOMAIN );
 ?></span><hr>
@@ -119,7 +157,7 @@ esc_attr_e( $jobwp_listing_overview_font_size );
         </tr>
         <!-- Job Info -->
         <tr>
-            <th scope="row" colspan="6">
+            <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
 _e( 'Job Information Label', JOBWP_TXT_DOMAIN );
 ?></span><hr>
@@ -157,7 +195,7 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
         </tr>
         <!-- Pagination -->
         <tr>
-            <th scope="row" colspan="6">
+            <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
 _e( 'Pagination', JOBWP_TXT_DOMAIN );
 ?></span><hr>

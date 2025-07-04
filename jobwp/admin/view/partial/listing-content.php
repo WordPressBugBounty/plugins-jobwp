@@ -15,6 +15,19 @@ foreach ( $jobwpListingContent as $option_name => $option_value ) {
 wp_nonce_field( 'jobwp_listing_content_action', 'jobwp_listing_content_nonce' );
 ?>
     <table class="jobwp-listing-content-settings-table">
+        <!-- Title Word Lengtht -->
+        <tr>
+            <th scope="row">
+                <label for="jobwp_list_title_length"><?php 
+_e( 'Title Word Length', JOBWP_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <input type="number" name="jobwp_list_title_length" class="medium-text" min="1" max="150" step="1" value="<?php 
+esc_attr_e( $jobwp_list_title_length );
+?>">
+            </td>
+        </tr>
         <tr class="jobwp_display_company_name">
             <th scope="row">
                 <label for="jobwp_display_company_name"><?php 
@@ -47,6 +60,7 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
 ?>
             </td>
         </tr>
+        <!-- Hide Overview -->
         <tr>
             <th scope="row">
                 <label for="jobwp_list_display_overview"><?php 
@@ -65,7 +79,7 @@ echo ( $jobwp_list_display_overview ? 'checked' : '' );
             </td>
             <th scope="row">
                 <label for="wbg_cat_label_txt"><?php 
-_e( 'Word Lengtht', JOBWP_TXT_DOMAIN );
+_e( 'Word Length', JOBWP_TXT_DOMAIN );
 ?></label>
             </th>
             <td>
@@ -74,6 +88,10 @@ esc_attr_e( $jobwp_list_overview_length );
 ?>">
             </td>
         </tr>
+        <tr>
+            <td colspan="4"><hr><hr></td>
+        </tr>
+        <!-- Hide Experience -->
         <tr>
             <th scope="row">
                 <label for="jobwp_list_display_experience"><?php 
@@ -166,6 +184,99 @@ esc_attr_e( $jobwp_list_job_type_lbl_txt );
 ?>" />
             </td>
         </tr>
+        <tr class="jobwp_list_display_salary">
+            <th scope="row">
+                <label for="jobwp_list_display_salary"><?php 
+_e( 'Display Salary', JOBWP_TXT_DOMAIN );
+?>?</label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Label Text', JOBWP_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <tr class="jobwp_list_display_responsibility">
+            <th scope="row">
+                <label for="jobwp_list_display_responsibility"><?php 
+_e( 'Display Responsibility', JOBWP_TXT_DOMAIN );
+?>?</label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Label Text', JOBWP_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <tr class="jobwp_list_display_vacancy">
+            <th scope="row">
+                <label for="jobwp_list_display_vacancy"><?php 
+_e( 'Display Vacancy', JOBWP_TXT_DOMAIN );
+?>?</label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Label Text', JOBWP_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr><hr></td>
+        </tr>
         <tr class="jobwp_display_listing_read_more">
             <th scope="row">
                 <label for="jobwp_display_listing_read_more"><?php 
@@ -233,6 +344,19 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
 ?></span>
                     <?php 
 ?>
+            </td>
+        </tr>
+        <tr class="jobwp_hide_pagination">
+            <th scope="row">
+                <label for="jobwp_hide_pagination"><?php 
+_e( 'Hide Pagination', JOBWP_TXT_DOMAIN );
+?>?</label>
+            </th>
+            <td>
+                <input type="checkbox" name="jobwp_hide_pagination" class="jobwp_hide_pagination" id="jobwp_hide_pagination" value="1" 
+                    <?php 
+checked( $jobwp_hide_pagination, 1 );
+?> />  
             </td>
         </tr>
     </table>

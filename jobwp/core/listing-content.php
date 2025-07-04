@@ -118,6 +118,46 @@ trait Jobwp_Listing_Content_Settings
                 'type'      => 'text',
                 'default'   => 'Jobs Found',
             ],
+            [
+                'name'      => 'jobwp_list_display_salary',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'jobwp_list_salary_lbl_txt',
+                'type'      => 'text',
+                'default'   => 'Salary',
+            ],
+            [
+                'name'      => 'jobwp_list_display_responsibility',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'jobwp_list_respo_lbl_txt',
+                'type'      => 'text',
+                'default'   => 'Responsibility',
+            ],
+            [
+                'name'      => 'jobwp_list_display_vacancy',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'jobwp_list_vacancy_lbl_txt',
+                'type'      => 'text',
+                'default'   => 'Vacancy',
+            ],
+            [
+                'name'      => 'jobwp_list_title_length',
+                'type'      => 'number',
+                'default'   => 10,
+            ],
+            [
+                'name'      => 'jobwp_hide_pagination',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
         ];
     }
 }

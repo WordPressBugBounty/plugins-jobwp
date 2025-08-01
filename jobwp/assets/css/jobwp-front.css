@@ -187,6 +187,22 @@ div.jobwp-featured-meta i {
     text-align: center;
 }
 
+.jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper {
+    clear: both;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .jobwp-list-info-item {
+    min-height: 35px;
+    line-height: 35px;
+    padding: 5px 0;
+}
+
+.jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .jobwp-list-info-item .jobwp-list-bottom-item {
+    margin-bottom: 0;
+}
+
 
 /* Grid Layout Started */
 
@@ -232,6 +248,16 @@ div.jobwp-featured-meta i {
 
 .jobwp-listing-body-container.grid .jobwp-item .pull-right {
     float: left;
+}
+
+.jobwp-listing-body-container.grid .jobwp-item .jobwp-list-info-wrapper {
+    display: block;
+    height: auto;
+}
+
+.jobwp-listing-body-container.grid .jobwp-item .jobwp-list-info-wrapper .pull-left,
+.jobwp-listing-body-container.grid .jobwp-item .jobwp-list-info-wrapper .pull-right {
+    float: none;
 }
 
 
@@ -541,6 +567,36 @@ span.wpsd-read-before-apply-border {
     text-decoration: none;
 }
 
+ul.jobwp-share-on {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+ul.jobwp-share-on li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+ul.jobwp-share-on li a.jobwp-share-on-link {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+    color: #FFF;
+    background: #333333;
+    text-decoration: none;
+}
+
+ul.jobwp-share-on li a.jobwp-share-on-link:hover {
+    background: #777;
+}
+
 
 /* Details Ended */
 
@@ -731,6 +787,14 @@ span.wpsd-read-before-apply-border {
     }
     .pull-right {
         float: left;
+    }
+    .jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper {
+        display: block;
+        height: auto;
+    }
+    .jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .pull-right,
+    .jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .pull-left {
+        float: none;
     }
     /* Single */
     .circulr-details-top p.jobwp-job-title {

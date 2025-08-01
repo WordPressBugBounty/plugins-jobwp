@@ -13,19 +13,19 @@ trait Jobwp_Applicaiton
             if ( !$file['jobwp_upload_resume']['error'] ) {
                 $ext = pathinfo( $file['jobwp_upload_resume']['name'], PATHINFO_EXTENSION );
                 $allowedfiletype = array("pdf");
-                $allowedfiletypemsg = __( 'Only Pdf file is permitted', JOBWP_TXT_DOMAIN );
+                $allowedfiletypemsg = __( 'Only Pdf file is permitted', 'jobwp' );
                 if ( !in_array( $ext, $allowedfiletype ) ) {
                     return __( $allowedfiletypemsg );
                 } else {
                     if ( $file['jobwp_upload_resume']['size'] > 2000000 ) {
-                        return __( 'Your file size is to large', JOBWP_TXT_DOMAIN );
+                        return __( 'Your file size is to large', 'jobwp' );
                     } else {
                         $jobwpDir = wp_upload_dir();
                         $jobwpDir = $jobwpDir['basedir'];
                         $uniqueFile = uniqid() . '-' . $_FILES['jobwp_upload_resume']['name'];
                         $fileName = $jobwpDir . '/jobwp-resume/' . $uniqueFile;
                         if ( !is_writable( $jobwpDir . '/jobwp-resume' ) ) {
-                            return 'The folder ' . __( $jobwpDir . '/jobwp-resume' ) . ' cannot be created or is not writable. Ask for support to your hosting provider.';
+                            return __( 'The folder', 'jobwp' ) . ' ' . $jobwpDir . '/jobwp-resume ' . __( 'cannot be created or is not writable. Ask for support to your hosting provider', 'jobwp' ) . '.';
                         } else {
                             if ( is_uploaded_file( $_FILES['jobwp_upload_resume']['tmp_name'] ) ) {
                                 if ( file_exists( $fileName ) ) {
@@ -33,7 +33,7 @@ trait Jobwp_Applicaiton
                                 }
                                 $r = move_uploaded_file( $_FILES['jobwp_upload_resume']['tmp_name'], $fileName );
                                 if ( $r === false ) {
-                                    return __( 'The file cannot be copied in the folder ' . $jobwpDir . '/jobwp-resume. Check if it exists and is writeable. You can also ask for support to your hosting provider.', JOBWP_TXT_DOMAIN );
+                                    return __( 'The file cannot be copied in the folder', 'jobwp' ) . ' ' . $jobwpDir . '/jobwp-resume ' . __( 'Check if it exists and is writeable. You can also ask for support to your hosting provider', 'jobwp' ) . '.';
                                 } else {
                                     global $wpdb;
                                     $table_name = $wpdb->base_prefix . 'jobwp_applied';
@@ -64,14 +64,14 @@ trait Jobwp_Applicaiton
                                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                                     //$headers .= 'From: Career' . "\r\n";
                                     $subject = __( 'Career - New Application', 'jobwp' );
-                                    $emailMessage = __( 'Applicant: ', 'jobwp' ) . $fullName;
-                                    $emailMessage .= '<br>' . __( 'Applied For: ', 'jobwp' ) . $applyFor;
-                                    $emailMessage .= '<br>' . __( 'Email: ', 'jobwp' ) . $email;
+                                    $emailMessage = __( 'Applicant', 'jobwp' ) . ': ' . $fullName;
+                                    $emailMessage .= '<br>' . __( 'Applied For', 'jobwp' ) . ': ' . $applyFor;
+                                    $emailMessage .= '<br>' . __( 'Email', 'jobwp' ) . ': ' . $email;
                                     if ( '' != $intl_tel ) {
-                                        $emailMessage .= '<br>' . __( 'Phone: ' ) . $intlPhone;
+                                        $emailMessage .= '<br>' . __( 'Phone' ) . ': ' . $intlPhone;
                                     }
                                     if ( '' != $message ) {
-                                        $emailMessage .= '<br>' . __( 'Cover Letter: ', 'jobwp' ) . $message;
+                                        $emailMessage .= '<br>' . __( 'Cover Letter', 'jobwp' ) . ': ' . $message;
                                     }
                                     wp_mail(
                                         $admin_email,

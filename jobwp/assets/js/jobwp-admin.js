@@ -47,7 +47,14 @@
         '#jobwp_single_howtoapply_title_brdr_clr',
         '#jobwp_single_howtoapply_content_clr',
         '#jobwp_single_info_lbl_font_color',
-        '#jobwp_list_com_font_color'
+        '#jobwp_list_com_font_color',
+        '#jobwp_read_more_bg_color',
+        '#jobwp_read_more_font_color',
+        '#jobwp_read_more_border_color',
+        '#jobwp_read_more_bg_color_hvr',
+        '#jobwp_read_more_font_color_hvr',
+        '#jobwp_read_more_border_color_hvr',
+        '#jobwp_listing_title_font_color_hvr'
     ];
 
     $.each(jobwpColorPicker, function(index, value) {

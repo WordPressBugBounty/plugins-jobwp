@@ -3,8 +3,8 @@ Contributors: hmplugin, mhmrajib, freemius
 Donate link: https://www.paypal.me/mhmrajib
 Tags: career, job board, job listing, jobs, job manager
 Requires at least: 5.4
-Tested up to: 6.8.1
-Stable tag: 2.4.2
+Tested up to: 6.8.2
+Stable tag: 2.4.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -196,6 +196,13 @@ You can display the job information and apply a url to that individual job which
 * POT file included (/languages/)
 * English (United States) (Default)
 * Bengoli (Bangla)
+* Italian
+* Russian
+* Spanish (Spain)
+* French (France)
+* German
+* Dutch (Netherlands)
+* Portuguese (Brazil)
 
 
 **👍 Feedback/Rating:**
@@ -275,6 +282,13 @@ Now go to your detail page and refresh it.
 
 
 == Changelog ==
+
+= 2.4.3 =
+* Listing page job info order option added
+* Freemius SDK upgraded to 2.12.1
+* Textdomain changed from define to real textdomain
+* Code optimized
+* Css fixed
 
 = 2.4.2 =
 * Job title word length option added

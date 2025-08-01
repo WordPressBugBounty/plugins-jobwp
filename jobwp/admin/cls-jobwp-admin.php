@@ -312,7 +312,7 @@ class JobWp_Admin {
         }
         $jobwpColumns = array(
             'cb'                      => __( 'Select All', JOBWP_TXT_DOMAIN ),
-            'jobwp_list_sl'           => __( '#', JOBWP_TXT_DOMAIN ),
+            'jobwp_list_sl'           => '#',
             'jobwp_applied_for'       => __( 'Applied For', JOBWP_TXT_DOMAIN ),
             'jobwp_applicant_name'    => __( 'Name', JOBWP_TXT_DOMAIN ),
             'jobwp_applicant_email'   => __( 'Email', JOBWP_TXT_DOMAIN ),

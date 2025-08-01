@@ -21,7 +21,7 @@ wp_nonce_field( 'jobwp_single_content_action', 'jobwp_single_content_nonce' );
         <tr class="jobwp_single_title_tag">
             <th scope="row">
                 <label for="jobwp_single_title_tag"><?php 
-_e( 'Job Title Tag', JOBWP_TXT_DOMAIN );
+_e( 'Job Title Tag', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -37,7 +37,7 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
         <tr class="jobwp_single_display_company_name">
             <th scope="row">
                 <label for="jobwp_single_display_company_name"><?php 
-_e( 'Display Company Name', JOBWP_TXT_DOMAIN );
+_e( 'Display Company Name', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -53,7 +53,7 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
         <tr class="jobwp_single_display_company_logo">
             <th scope="row">
                 <label for="jobwp_single_display_company_logo"><?php 
-_e( 'Display Company Logo', JOBWP_TXT_DOMAIN );
+_e( 'Display Company Logo', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -74,7 +74,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Overview">
                     <th scope="row">
                         <label for="jobwp_single_hide_overview"><?php 
-        _e( 'Hide Overview', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Overview', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -85,7 +85,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -101,7 +101,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_NoOfVacancies">
                     <th scope="row">
                         <label for="jobwp_single_hide_vacancies"><?php 
-        _e( 'Hide No. of Vacancies', JOBWP_TXT_DOMAIN );
+        _e( 'Hide No. of Vacancies', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -112,7 +112,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -128,7 +128,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Skills">
                     <th scope="row">
                         <label for="jobwp_single_hide_skills"><?php 
-        _e( 'Hide Specific Skills', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Specific Skills', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -139,7 +139,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -155,7 +155,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_ResponsibleFor">
                     <th scope="row">
                         <label for="jobwp_single_hide_responsible"><?php 
-        _e( 'Hide Responsible For', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Responsible For', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -166,7 +166,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -182,7 +182,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_AdditionalRequirements">
                     <th scope="row">
                         <label for="jobwp_single_hide_requirements"><?php 
-        _e( 'Hide Additional Requirements', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Additional Requirements', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -193,7 +193,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -209,7 +209,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_JobNature">
                     <th scope="row">
                         <label for="jobwp_single_hide_job_type"><?php 
-        _e( 'Hide Job Nature', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Job Nature', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -220,7 +220,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -236,7 +236,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_EducationalRequirements">
                     <th scope="row">
                         <label for="jobwp_single_hide_education"><?php 
-        _e( 'Hide Educational Requirements', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Educational Requirements', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -247,7 +247,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -263,7 +263,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_ExperienceRequirements">
                     <th scope="row">
                         <label for="jobwp_single_hide_experience"><?php 
-        _e( 'Hide Experience Requirements', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Experience Requirements', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -274,7 +274,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -290,7 +290,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Location">
                     <th scope="row">
                         <label for="jobwp_single_hide_loc"><?php 
-        _e( 'Hide Job Location', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Job Location', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -301,7 +301,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -317,7 +317,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Salary">
                     <th scope="row">
                         <label for="jobwp_single_hide_salary"><?php 
-        _e( 'Hide Salary', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Salary', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -328,7 +328,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -344,7 +344,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Benefits">
                     <th scope="row">
                         <label for="jobwp_single_hide_benefit"><?php 
-        _e( 'Hide Other Benefits', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Other Benefits', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -355,7 +355,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -371,7 +371,7 @@ foreach ( $single_items as $sItem ) {
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Level">
                     <th scope="row">
                         <label for="jobwp_single_hide_level"><?php 
-        _e( 'Hide Job Level', JOBWP_TXT_DOMAIN );
+        _e( 'Hide Job Level', 'jobwp' );
         ?>?</label>
                     </th>
                     <td>
@@ -382,7 +382,7 @@ foreach ( $single_items as $sItem ) {
                     </td>
                     <th scope="row">
                         <label><?php 
-        _e( 'Label Text', JOBWP_TXT_DOMAIN );
+        _e( 'Label Text', 'jobwp' );
         ?></label>
                     </th>
                     <td>
@@ -396,10 +396,11 @@ foreach ( $single_items as $sItem ) {
 }
 ?>
         <tr><td colspan="4"><hr></td></tr>
+        <!-- Hide Apply Procedure -->
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_apply_procedure"><?php 
-_e( 'Hide Apply Procedure', JOBWP_TXT_DOMAIN );
+_e( 'Hide Apply Procedure', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -410,7 +411,7 @@ echo ( $jobwp_hide_apply_procedure ? 'checked' : '' );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Apply Procedure Title', JOBWP_TXT_DOMAIN );
+_e( 'Apply Procedure Title', 'jobwp' );
 ?></label>
             </th>
             <td colspan="3">
@@ -419,10 +420,11 @@ esc_attr_e( $jobwp_apply_procedure_title );
 ?>" />
             </td>
         </tr>
+        <!-- Apply Procedure Content -->
         <tr class="jobwp_apply_procedure_content">
             <th colspan="3" scope="row" style="text-align: right;">
                 <label><?php 
-_e( 'Apply Procedure Content', JOBWP_TXT_DOMAIN );
+_e( 'Apply Procedure Content', 'jobwp' );
 ?></label>
             </th>
             <td colspan="1">
@@ -431,10 +433,11 @@ esc_html_e( $jobwp_apply_procedure_content );
 ?></textarea>
             </td>
         </tr>
+        <!-- Hide Apply Button -->
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_apply_button"><?php 
-_e( 'Hide Apply Button', JOBWP_TXT_DOMAIN );
+_e( 'Hide Apply Button', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -445,7 +448,7 @@ echo ( $jobwp_hide_apply_button ? 'checked' : '' );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Apply Button Text', JOBWP_TXT_DOMAIN );
+_e( 'Apply Button Text', 'jobwp' );
 ?></label>
             </th>
             <td colspan="3">
@@ -454,12 +457,43 @@ esc_attr_e( $jobwp_apply_button_text );
 ?>" />
             </td>
         </tr>
+        <!-- Hide Share On -->
+        <tr>
+            <th scope="row">
+                <label for="jobwp_hide_share_on"><?php 
+_e( 'Hide Share On', 'jobwp' );
+?>?</label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label for="jobwp_hide_share_on"><?php 
+_e( 'Label Text', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
     </table>
     <hr>
     <p class="submit">
         <button id="updateSingleContent" name="updateSingleContent" class="button button-primary jobwp-button">
             <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 
-_e( 'Save Settings', JOBWP_TXT_DOMAIN );
+_e( 'Save Settings', 'jobwp' );
 ?>
         </button>
     </p>

@@ -87,16 +87,16 @@ if ( !$jobwp_hide_apply_form_cover ) {
 
         <div class="jobwp-field-row">
             <label><?php 
-_e( 'Upload CV/Resume', JOBWP_TXT_DOMAIN );
+_e( 'Upload CV/Resume', 'jobwp' );
 ?></label><span class="required">*</span>
             <span><?php 
-_e( 'Attach your resume. Max size 2mb', JOBWP_TXT_DOMAIN );
+_e( 'Attach your resume. Max size 2mb', 'jobwp' );
 ?></span>
             <input type="file" name="jobwp_upload_resume" id="jobwp_upload_resume" />
             <span>
                 <?php 
-_e( 'Allowed Type(s): ', JOBWP_TXT_DOMAIN );
-_e( 'pdf', JOBWP_TXT_DOMAIN );
+echo __( 'Allowed Types', 'jobwp' ) . ': ';
+_e( 'pdf', 'jobwp' );
 ?>
             </span>
         </div>

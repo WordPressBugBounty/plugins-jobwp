@@ -87,13 +87,57 @@ esc_html_e( $jobwp_listing_overview_font_size );
   /* Job info */
   .jobwp-item .jobwp-bottom .jobwp-list-bottom-item i.fa,
   .jobwp-item .jobwp-bottom .jobwp-list-bottom-item i.fa-solid,
-  .jobwp-item .jobwp-bottom .jobwp-list-bottom-item strong.primary-color {
+  .jobwp-item .jobwp-bottom .jobwp-list-bottom-item strong.primary-color,
+  .jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .jobwp-list-info-item .jobwp-list-bottom-item i.fa,
+  .jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .jobwp-list-info-item .jobwp-list-bottom-item i.fa-solid,
+  .jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .jobwp-list-info-item .jobwp-list-bottom-item strong.primary-color {
     color: <?php 
 esc_html_e( $jobwp_listing_info_font_color );
 ?>;
     font-size: <?php 
 esc_html_e( $jobwp_listing_info_font_size );
 ?>px;
+  }
+  /* Read More */
+  .jobwp-item .jobwp-top .jobwp-top-left a.jobwp-read-more {
+    color: <?php 
+esc_html_e( $jobwp_read_more_font_color );
+?>;
+    background-color: <?php 
+esc_html_e( $jobwp_read_more_bg_color );
+?>;
+    font-size: <?php 
+esc_html_e( $jobwp_read_more_font_size );
+?>px;
+    line-height: <?php 
+esc_html_e( $jobwp_read_more_font_size );
+?>px;
+    border: <?php 
+esc_html_e( $jobwp_read_more_border_width );
+?>px solid <?php 
+esc_html_e( $jobwp_read_more_border_color );
+?>;
+    padding: <?php 
+esc_html_e( $jobwp_read_more_padding_tb );
+?>px <?php 
+esc_html_e( $jobwp_read_more_padding_lr );
+?>px;
+    border-radius: <?php 
+esc_html_e( $jobwp_read_more_border_radius );
+?>px;
+  }
+  .jobwp-item .jobwp-top .jobwp-top-left a.jobwp-read-more:hover {
+    color: <?php 
+esc_html_e( $jobwp_read_more_font_color_hvr );
+?>;
+    background-color: <?php 
+esc_html_e( $jobwp_read_more_bg_color_hvr );
+?>;
+    border: <?php 
+esc_html_e( $jobwp_read_more_border_width );
+?>px solid <?php 
+esc_html_e( $jobwp_read_more_border_color_hvr );
+?>;
   }
   /* Pagination */
   .jobwp-pagination .page-numbers li a.page-numbers {

@@ -118,6 +118,66 @@ trait Jobwp_Listing_Styles_Settings
                 'type'      => 'number',
                 'default'   => '15',
             ],
+            [
+                'name'      => 'jobwp_read_more_bg_color',
+                'type'      => 'text',
+                'default'   => '#2B8EEC',
+            ],
+            [
+                'name'      => 'jobwp_read_more_font_color',
+                'type'      => 'text',
+                'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'jobwp_read_more_font_size',
+                'type'      => 'number',
+                'default'   => '15',
+            ],
+            [
+                'name'      => 'jobwp_read_more_border_color',
+                'type'      => 'text',
+                'default'   => '#2B8EEC',
+            ],
+            [
+                'name'      => 'jobwp_read_more_border_width',
+                'type'      => 'number',
+                'default'   => '0',
+            ],
+            [
+                'name'      => 'jobwp_read_more_border_radius',
+                'type'      => 'number',
+                'default'   => '0',
+            ],
+            [
+                'name'      => 'jobwp_read_more_padding_tb',
+                'type'      => 'number',
+                'default'   => '10',
+            ],
+            [
+                'name'      => 'jobwp_read_more_padding_lr',
+                'type'      => 'number',
+                'default'   => '15',
+            ],
+            [
+                'name'      => 'jobwp_read_more_bg_color_hvr',
+                'type'      => 'text',
+                'default'   => '#2B8EEC',
+            ],
+            [
+                'name'      => 'jobwp_read_more_font_color_hvr',
+                'type'      => 'text',
+                'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'jobwp_read_more_border_color_hvr',
+                'type'      => 'text',
+                'default'   => '#2B8EEC',
+            ],
+            [
+                'name'      => 'jobwp_listing_title_font_color_hvr',
+                'type'      => 'text',
+                'default'   => '#242424',
+            ],
         ];
     }
 }

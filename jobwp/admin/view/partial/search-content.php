@@ -60,7 +60,7 @@ _e( 'Order', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -97,7 +97,7 @@ _e( 'Order', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -133,7 +133,7 @@ _e( 'Order', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -169,7 +169,7 @@ _e( 'Order', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -185,7 +185,7 @@ _e( 'Hide Job Level', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -199,7 +199,7 @@ _e( 'Placeholder Text', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -213,7 +213,7 @@ _e( 'Order', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>

@@ -54,27 +54,27 @@ _e( 'An email will sent to this email when a candidate submit an applicaiton.', 
                         <tr class="jobwp_admin_noti_email_users">
                             <th scope="row">
                                 <label for="jobwp_ext_apply_now_url"><?php 
-_e( 'Notification Email to User Role', JOBWP_TXT_DOMAIN );
+_e( 'Notification Email to User Role', 'jobwp' );
 ?></label>
                             </th>
                             <td>
                                 <?php 
 ?>
                                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                                     <?php 
 ?>
                                 <br>
                                 <code><?php 
-_e( 'An email will sent to this role based user emails when a candidate submit an applicaiton.', JOBWP_TXT_DOMAIN );
+_e( 'An email will sent to this role based user emails when a candidate submit an applicaiton.', 'jobwp' );
 ?></code>
                             </td>
                         </tr>
                         <tr class="jobwp_list_layout">
                             <th scope="row">
                                 <label><?php 
-_e( 'Job Page Layout', JOBWP_TXT_DOMAIN );
+_e( 'Job Page Layout', 'jobwp' );
 ?></label>
                             </th>
                             <td>
@@ -82,21 +82,21 @@ _e( 'Job Page Layout', JOBWP_TXT_DOMAIN );
 echo ( 'list' === $jobwp_list_layout ? 'checked' : '' );
 ?> >
                                 <label for="jobwp_list_layout_list"><span></span><?php 
-_e( 'List', JOBWP_TXT_DOMAIN );
+_e( 'List', 'jobwp' );
 ?></label>
                                 &nbsp;&nbsp;
                                 <input type="radio" name="jobwp_list_layout" id="jobwp_list_layout_grid" value="grid" <?php 
 echo ( 'grid' === $jobwp_list_layout ? 'checked' : '' );
 ?> >
                                 <label for="jobwp_list_layout_grid"><span></span><?php 
-_e( 'Grid', JOBWP_TXT_DOMAIN );
+_e( 'Grid', 'jobwp' );
 ?></label>
                             </td>
                         </tr>
                         <tr class="jobwp_ext_application_form">
                             <th scope="row">
                                 <label for="jobwp_ext_application_form"><?php 
-_e( 'Use External Application Form', JOBWP_TXT_DOMAIN );
+_e( 'Use External Application Form', 'jobwp' );
 ?>?</label>
                             </th>
                             <td>
@@ -109,7 +109,7 @@ echo ( $jobwp_ext_application_form ? 'checked' : '' );
                         <tr class="jobwp_ext_application_form_shortcode">
                             <th scope="row">
                                 <label><?php 
-_e( 'External Application Form Shortcode', JOBWP_TXT_DOMAIN );
+_e( 'External Application Form Shortcode', 'jobwp' );
 ?></label>
                             </th>
                             <td>
@@ -118,7 +118,7 @@ esc_attr_e( stripslashes( $jobwp_ext_application_form_shortcode ) );
 ?>" />
                                 <br>
                                 <code><?php 
-_e( 'You can use external form instead of default application form. Like WPForms, Contact Form etc.', JOBWP_TXT_DOMAIN );
+_e( 'You can use external form instead of default application form. Like WPForms, Contact Form etc.', 'jobwp' );
 ?></code>
                             </td>
                         </tr>
@@ -132,7 +132,7 @@ _e( 'Allow External Application URL', 'jobwp' );
                                 <?php 
 ?>
                                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                                     <?php 
 ?>
@@ -141,7 +141,7 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
                         <tr class="jobwp_hide_jobs_deadline_over">
                             <th scope="row">
                                 <label for="jobwp_hide_jobs_deadline_over"><?php 
-_e( 'Hide Jobs When Deadline Over', JOBWP_TXT_DOMAIN );
+_e( 'Hide Jobs When Deadline is Over', 'jobwp' );
 ?>?</label>
                             </th>
                             <td>
@@ -153,14 +153,14 @@ echo ( $jobwp_hide_jobs_deadline_over ? 'checked' : '' );
                         <tr class="jobwp_allow_login_apply">
                             <th scope="row">
                                 <label for="jobwp_allow_login_apply"><?php 
-_e( 'Allow Login to Apply', 'jobwp' );
+_e( 'Should Candidate Login Before Apply', 'jobwp' );
 ?>?</label>
                             </th>
                             <td>
                                 <?php 
 ?>
                                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                                     <?php 
 ?>
@@ -193,7 +193,7 @@ _e( 'Secret Key', 'jobwp' );
 ?></label>
                             </th>
                             <td>
-                                <input type="text" name="jobwp_recaptcha_secret_key" id="jobwp_recaptcha_secret_key" class="regular-text" value="<?php 
+                                <input type="password" name="jobwp_recaptcha_secret_key" id="jobwp_recaptcha_secret_key" class="regular-text" value="<?php 
 esc_attr_e( stripslashes( $jobwp_recaptcha_secret_key ) );
 ?>" />
                             </td>

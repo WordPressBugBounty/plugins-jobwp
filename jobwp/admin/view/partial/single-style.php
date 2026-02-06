@@ -19,14 +19,14 @@ wp_nonce_field( 'jobwp_single_style_action', 'jobwp_single_style_nonce' );
         <tr>
             <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
-_e( 'Container', JOBWP_TXT_DOMAIN );
+_e( 'Container', 'jobwp' );
 ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', JOBWP_TXT_DOMAIN );
+_e( 'Background Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -37,7 +37,7 @@ esc_attr_e( $jobwp_single_container_bg_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Margin Top', JOBWP_TXT_DOMAIN );
+_e( 'Margin Top', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -48,7 +48,7 @@ esc_attr_e( $jobwp_single_container_margin_top );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Margin Bottom', JOBWP_TXT_DOMAIN );
+_e( 'Margin Bottom', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -62,14 +62,14 @@ esc_attr_e( $jobwp_single_container_margin_btm );
         <tr>
             <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
-_e( 'Job Title', JOBWP_TXT_DOMAIN );
+_e( 'Job Title', 'jobwp' );
 ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', JOBWP_TXT_DOMAIN );
+_e( 'Background Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -80,7 +80,7 @@ esc_attr_e( $jobwp_single_title_bg_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Color', JOBWP_TXT_DOMAIN );
+_e( 'Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -91,7 +91,7 @@ esc_attr_e( $jobwp_single_title_font_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Size', JOBWP_TXT_DOMAIN );
+_e( 'Font Size', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -105,28 +105,28 @@ esc_attr_e( $jobwp_single_title_font_size );
         <tr>
             <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
-_e( 'Job Info', JOBWP_TXT_DOMAIN );
+_e( 'Job Info', 'jobwp' );
 ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Column Width', JOBWP_TXT_DOMAIN );
+_e( 'Column Width', 'jobwp' );
 ?>:</label>
             </th>
             <td>
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Label Font Color', JOBWP_TXT_DOMAIN );
+_e( 'Label Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -137,7 +137,7 @@ esc_attr_e( $jobwp_single_info_lbl_font_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Label Font Size', JOBWP_TXT_DOMAIN );
+_e( 'Label Font Size', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -150,7 +150,7 @@ esc_attr_e( $jobwp_single_info_lbl_font_size );
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Info Font Color', JOBWP_TXT_DOMAIN );
+_e( 'Info Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -161,7 +161,7 @@ esc_attr_e( $jobwp_single_info_font_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Info Font Size', JOBWP_TXT_DOMAIN );
+_e( 'Info Font Size', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -175,14 +175,14 @@ esc_attr_e( $jobwp_single_info_font_size );
         <tr>
             <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
-_e( 'How to Apply', JOBWP_TXT_DOMAIN );
+_e( 'How to Apply', 'jobwp' );
 ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', JOBWP_TXT_DOMAIN );
+_e( 'Background Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -193,7 +193,7 @@ esc_attr_e( $jobwp_single_how_to_apply_bg_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Title Font Color', JOBWP_TXT_DOMAIN );
+_e( 'Title Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -204,7 +204,7 @@ esc_attr_e( $jobwp_single_howtoapply_title_font_clr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Title Font Size', JOBWP_TXT_DOMAIN );
+_e( 'Title Font Size', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -217,7 +217,7 @@ esc_attr_e( $jobwp_single_howtoapply_title_font_size );
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Title Border Color', JOBWP_TXT_DOMAIN );
+_e( 'Title Border Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -228,7 +228,7 @@ esc_attr_e( $jobwp_single_howtoapply_title_brdr_clr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Content Color', JOBWP_TXT_DOMAIN );
+_e( 'Content Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -239,7 +239,7 @@ esc_attr_e( $jobwp_single_howtoapply_content_clr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Content Size', JOBWP_TXT_DOMAIN );
+_e( 'Content Size', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -253,14 +253,14 @@ esc_attr_e( $jobwp_single_howtoapply_content_size );
         <tr>
             <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
-_e( 'Apply Button', JOBWP_TXT_DOMAIN );
+_e( 'Apply Button', 'jobwp' );
 ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Button Color', JOBWP_TXT_DOMAIN );
+_e( 'Button Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -271,7 +271,7 @@ esc_attr_e( $jobwp_single_apply_btn_bg_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Size', JOBWP_TXT_DOMAIN );
+_e( 'Font Size', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -282,7 +282,7 @@ esc_attr_e( $jobwp_single_apply_btn_font_size );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Color', JOBWP_TXT_DOMAIN );
+_e( 'Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -295,7 +295,7 @@ esc_attr_e( $jobwp_single_apply_btn_font_color );
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Border Color', JOBWP_TXT_DOMAIN );
+_e( 'Border Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -306,7 +306,7 @@ esc_attr_e( $jobwp_single_apply_btn_border_color );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Padding', JOBWP_TXT_DOMAIN );
+_e( 'Padding', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -314,19 +314,19 @@ _e( 'Padding', JOBWP_TXT_DOMAIN );
 esc_attr_e( $jobwp_single_apply_btn_padding_h );
 ?>">
                 <?php 
-_e( 'Height', JOBWP_TXT_DOMAIN );
+_e( 'Height', 'jobwp' );
 ?>&nbsp;&nbsp;
                 <input type="number" class="small-text" min="0" max="50" name="jobwp_single_apply_btn_padding_w" id="jobwp_single_apply_btn_padding_w" value="<?php 
 esc_attr_e( $jobwp_single_apply_btn_padding_w );
 ?>">
                 <?php 
-_e( 'Width', JOBWP_TXT_DOMAIN );
+_e( 'Width', 'jobwp' );
 ?>&nbsp;
                 <code>(px)</code>
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Border Radius', JOBWP_TXT_DOMAIN );
+_e( 'Border Radius', 'jobwp' );
 ?>:</label>
             </th>
             <td colspan="5">
@@ -340,14 +340,14 @@ esc_attr_e( $jobwp_single_apply_btn_brdr_radius );
         <tr>
             <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span><?php 
-_e( 'Apply Button: Hover', JOBWP_TXT_DOMAIN );
+_e( 'Apply Button: Hover', 'jobwp' );
 ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', JOBWP_TXT_DOMAIN );
+_e( 'Background Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -358,7 +358,7 @@ esc_attr_e( $jobwp_single_apply_btn_bg_clr_hvr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Border Color', JOBWP_TXT_DOMAIN );
+_e( 'Border Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -369,7 +369,7 @@ esc_attr_e( $jobwp_single_apply_btn_brdr_clr_hvr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Color', JOBWP_TXT_DOMAIN );
+_e( 'Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -382,6 +382,6 @@ esc_attr_e( $jobwp_single_apply_btn_font_clr_hvr );
     </table>
     <hr>
     <p class="submit"><button id="updateSingleStyles" name="updateSingleStyles" class="button button-primary jobwp-button"><?php 
-_e( 'Save Settings', JOBWP_TXT_DOMAIN );
+_e( 'Save Settings', 'jobwp' );
 ?></button></p>
 </form>

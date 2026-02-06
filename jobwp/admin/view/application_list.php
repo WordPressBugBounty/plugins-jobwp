@@ -100,10 +100,12 @@ print_column_headers( 'jobwp-allication-table-column', false );
 </div>
 <?php 
 ?>
-    <a href="#" class="button button-primary jobwp-button"><?php 
-_e( 'Please Upgrade to Export in CSV/Excel', 'jobwp' );
+    <a href="<?php 
+echo job_fs()->get_upgrade_url();
+?>" class="button button-primary jobwp-button"><?php 
+_e( 'Export to CSV/Excel Available in Professional', 'jobwp' );
 ?></a><br>
     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now to Export', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Export Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
     

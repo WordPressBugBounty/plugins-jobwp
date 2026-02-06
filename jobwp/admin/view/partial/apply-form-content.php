@@ -14,11 +14,11 @@ foreach ( $jobwpApplyFormContent as $option_name => $option_value ) {
 <?php 
 wp_nonce_field( 'jobwp_apply_form_content_action', 'jobwp_apply_form_content_nonce' );
 ?>
-    <table class="jobwp-listing-content-settings-table">
+    <table class="jobwp-listing-content-settings-table" style="width: 100%;">
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_apply_form_title"><?php 
-_e( 'Hide Form Title', JOBWP_TXT_DOMAIN );
+_e( 'Hide Form Title', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -26,12 +26,12 @@ _e( 'Hide Form Title', JOBWP_TXT_DOMAIN );
 echo ( $jobwp_hide_apply_form_title ? 'checked' : '' );
 ?>>
             </td>
-            <th scope="row">
+            <th scope="row" style="text-align: right;">
                 <label><?php 
-_e( 'Title Text', JOBWP_TXT_DOMAIN );
+_e( 'Title Text', 'jobwp' );
 ?></label>
             </th>
-            <td>
+            <td colspan="3">
                 <input type="text" name="jobwp_apply_form_title" id="jobwp_apply_form_title" class="regular-text" value="<?php 
 esc_attr_e( $jobwp_apply_form_title );
 ?>" />
@@ -40,10 +40,10 @@ esc_attr_e( $jobwp_apply_form_title );
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Name Label', JOBWP_TXT_DOMAIN );
+_e( 'Name Label', 'jobwp' );
 ?></label>
             </th>
-            <td colspan="3">
+            <td colspan="5">
                 <input type="text" name="jobwp_apply_form_name_label" id="jobwp_apply_form_name_label" class="regular-text" value="<?php 
 esc_attr_e( $jobwp_apply_form_name_label );
 ?>" />
@@ -52,10 +52,10 @@ esc_attr_e( $jobwp_apply_form_name_label );
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Email Label', JOBWP_TXT_DOMAIN );
+_e( 'Email Label', 'jobwp' );
 ?></label>
             </th>
-            <td colspan="3">
+            <td colspan="5">
                 <input type="text" name="jobwp_apply_form_email_label" id="jobwp_apply_form_email_label" class="regular-text" value="<?php 
 esc_attr_e( $jobwp_apply_form_email_label );
 ?>" />
@@ -65,7 +65,7 @@ esc_attr_e( $jobwp_apply_form_email_label );
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_apply_form_cover"><?php 
-_e( 'Hide Cover Letter', JOBWP_TXT_DOMAIN );
+_e( 'Hide Cover Letter', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -73,13 +73,13 @@ _e( 'Hide Cover Letter', JOBWP_TXT_DOMAIN );
 echo ( $jobwp_hide_apply_form_cover ? 'checked' : '' );
 ?>>
             </td>
-            <th scope="row">
+            <th scope="row" style="text-align: right;">
                 <label><?php 
-_e( 'Cover Letter Label', JOBWP_TXT_DOMAIN );
+_e( 'Cover Letter Label', 'jobwp' );
 ?></label>
             </th>
-            <td>
-                <input type="text" name="jobwp_apply_form_cover_letter_label" id="jobwp_apply_form_cover_letter_label" class="regular-text" value="<?php 
+            <td colspan="3">
+                <input type="text" name="jobwp_apply_form_cover_letter_label" id="jobwp_apply_form_cover_letter_label" class="medium-text" value="<?php 
 esc_attr_e( $jobwp_apply_form_cover_letter_label );
 ?>" />
             </td>
@@ -88,60 +88,75 @@ esc_attr_e( $jobwp_apply_form_cover_letter_label );
         <tr>
             <th scope="row">
                 <label for="jobwp_display_apply_form_phone"><?php 
-_e( 'Display Phone', JOBWP_TXT_DOMAIN );
+_e( 'Display Phone', 'jobwp' );
 ?>?</label>
             </th>
             <td>
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
             </td>
-            <th scope="row">
+            <th scope="row" style="text-align: right;">
                 <label><?php 
-_e( 'Phone Label', JOBWP_TXT_DOMAIN );
+_e( 'Phone Label', 'jobwp' );
 ?></label>
             </th>
             <td>
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
             </td>
+            <th scope="row" style="text-align: right;">
+                <label><?php 
+_e( 'Default Country Code', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+                <code>2 digit codes (ISO 3166-1)</code>
+            </td>
         </tr>
-        <tr><td colspan="4"><hr></td></tr>
+        <tr><td colspan="6"><hr></td></tr>
         <!-- User Consent -->
         <tr>
             <th scope="row">
                 <label for="jobwp_apply_form_user_consent"><?php 
-_e( 'Hide User Consent', JOBWP_TXT_DOMAIN );
+_e( 'Hide User Consent', 'jobwp' );
 ?>?</label>
             </th>
             <td>
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
             </td>
-            <th scope="row">
+            <th scope="row" style="text-align: right;">
                 <label><?php 
-_e( 'User Consent Text', JOBWP_TXT_DOMAIN );
+_e( 'User Consent Text', 'jobwp' );
 ?></label>
             </th>
-            <td>
+            <td colspan="3">
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -150,10 +165,10 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now'
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Submit Button Text', JOBWP_TXT_DOMAIN );
+_e( 'Submit Button Text', 'jobwp' );
 ?></label>
             </th>
-            <td colspan="3">
+            <td colspan="5">
                 <input type="text" name="jobwp_apply_form_submit_btn_txt" id="jobwp_apply_form_submit_btn_txt" class="medium-text" value="<?php 
 esc_attr_e( $jobwp_apply_form_submit_btn_txt );
 ?>" />
@@ -164,7 +179,7 @@ esc_attr_e( $jobwp_apply_form_submit_btn_txt );
     <p class="submit">
         <button id="updateApplyFormContent" name="updateApplyFormContent" class="button button-primary jobwp-button">
             <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 
-_e( 'Save Settings', JOBWP_TXT_DOMAIN );
+_e( 'Save Settings', 'jobwp' );
 ?>
         </button>
     </p>

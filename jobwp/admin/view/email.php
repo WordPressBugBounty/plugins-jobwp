@@ -33,7 +33,7 @@ if ( $jobwpEmailMessage ) {
             <?php 
 ?>
                 <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                 <?php 
 ?>

@@ -84,56 +84,56 @@ class JobWp_Admin {
         $jobwp_cpt_menu = 'edit.php?post_type=jobs';
         add_submenu_page(
             $jobwp_cpt_menu,
-            __( 'General Settings', JOBWP_TXT_DOMAIN ),
-            __( 'General Settings', JOBWP_TXT_DOMAIN ),
+            __( 'General Settings', 'jobwp' ),
+            __( 'General Settings', 'jobwp' ),
             'edit_others_posts',
             'jobwp-general-settings',
             array($this, 'jobwp_general_settings')
         );
         add_submenu_page(
             $jobwp_cpt_menu,
-            __( 'Listing Page Settings', JOBWP_TXT_DOMAIN ),
-            __( 'Listing Page Settings', JOBWP_TXT_DOMAIN ),
+            __( 'Listing Page Settings', 'jobwp' ),
+            __( 'Listing Page Settings', 'jobwp' ),
             'edit_others_posts',
             'jobwp-listing-settings',
             array($this, 'jobwp_listing_settings')
         );
         add_submenu_page(
             $jobwp_cpt_menu,
-            __( 'Search Panel Settings', JOBWP_TXT_DOMAIN ),
-            __( 'Search Panel Settings', JOBWP_TXT_DOMAIN ),
+            __( 'Search Panel Settings', 'jobwp' ),
+            __( 'Search Panel Settings', 'jobwp' ),
             'edit_others_posts',
             'jobwp-search-settings',
             array($this, JOBWP_PRFX . 'search_settings')
         );
         add_submenu_page(
             $jobwp_cpt_menu,
-            __( 'Detail Page Settings', JOBWP_TXT_DOMAIN ),
-            __( 'Detail Page Settings', JOBWP_TXT_DOMAIN ),
+            __( 'Detail Page Settings', 'jobwp' ),
+            __( 'Detail Page Settings', 'jobwp' ),
             'edit_others_posts',
             'jobwp-single-settings',
             array($this, JOBWP_PRFX . 'single_settings')
         );
         add_submenu_page(
             $jobwp_cpt_menu,
-            __( 'Email Settings', JOBWP_TXT_DOMAIN ),
-            __( 'Email Settings', JOBWP_TXT_DOMAIN ),
+            __( 'Email Settings', 'jobwp' ),
+            __( 'Email Settings', 'jobwp' ),
             'edit_others_posts',
             'jobwp-email-settings',
             array($this, 'jobwp_email_settings')
         );
         add_submenu_page(
             $jobwp_cpt_menu,
-            __( 'Apply Form', JOBWP_TXT_DOMAIN ),
-            __( 'Apply Form', JOBWP_TXT_DOMAIN ),
+            __( 'Apply Form', 'jobwp' ),
+            __( 'Apply Form', 'jobwp' ),
             'edit_others_posts',
             'jobwp-apply-form-settings',
             array($this, JOBWP_PRFX . 'apply_form')
         );
         add_submenu_page(
             $jobwp_cpt_menu,
-            __( 'Application List', JOBWP_TXT_DOMAIN ),
-            __( 'Application List', JOBWP_TXT_DOMAIN ),
+            __( 'Application List', 'jobwp' ),
+            __( 'Application List', 'jobwp' ),
             'edit_others_posts',
             'jobwp-application-list',
             array($this, JOBWP_PRFX . 'application_list')
@@ -311,16 +311,16 @@ class JobWp_Admin {
             return;
         }
         $jobwpColumns = array(
-            'cb'                      => __( 'Select All', JOBWP_TXT_DOMAIN ),
+            'cb'                      => __( 'Select All', 'jobwp' ),
             'jobwp_list_sl'           => '#',
-            'jobwp_applied_for'       => __( 'Applied For', JOBWP_TXT_DOMAIN ),
-            'jobwp_applicant_name'    => __( 'Name', JOBWP_TXT_DOMAIN ),
-            'jobwp_applicant_email'   => __( 'Email', JOBWP_TXT_DOMAIN ),
-            'jobwp_applicant_message' => __( 'Cover Letter', JOBWP_TXT_DOMAIN ),
-            'jobwp_applicant_resume'  => __( 'Resume', JOBWP_TXT_DOMAIN ),
-            'jobwp_applied_on'        => __( 'Date', JOBWP_TXT_DOMAIN ),
+            'jobwp_applied_for'       => __( 'Applied For', 'jobwp' ),
+            'jobwp_applicant_name'    => __( 'Name', 'jobwp' ),
+            'jobwp_applicant_email'   => __( 'Email', 'jobwp' ),
+            'jobwp_applicant_message' => __( 'Cover Letter', 'jobwp' ),
+            'jobwp_applicant_resume'  => __( 'Resume', 'jobwp' ),
+            'jobwp_applied_on'        => __( 'Date', 'jobwp' ),
         );
-        $jobwpColumns['action'] = __( 'Action', JOBWP_TXT_DOMAIN );
+        $jobwpColumns['action'] = __( 'Action', 'jobwp' );
         register_column_headers( 'jobwp-allication-table-column', $jobwpColumns );
         include_once JOBWP_PATH . 'admin/view/application_list.php';
     }
@@ -329,24 +329,25 @@ class JobWp_Admin {
      *	Function For Loading Jobs Custom Post Type
      */
     function jobwp_custom_post_type() {
+        $bg_slug = ( !empty( get_option( 'jobwp_cpt_slug' ) ) ? get_option( 'jobwp_cpt_slug' ) : 'jobs' );
         $labels = array(
-            'name'               => __( 'All Jobs', JOBWP_TXT_DOMAIN ),
-            'singular_name'      => __( 'WP Jobs', JOBWP_TXT_DOMAIN ),
-            'menu_name'          => __( 'WP Jobs', JOBWP_TXT_DOMAIN ),
-            'parent_item_colon'  => __( 'Parent Job', JOBWP_TXT_DOMAIN ),
-            'all_items'          => __( 'All Jobs', JOBWP_TXT_DOMAIN ),
-            'view_item'          => __( 'View Job', JOBWP_TXT_DOMAIN ),
-            'add_new_item'       => __( 'Add New Job', JOBWP_TXT_DOMAIN ),
-            'add_new'            => __( 'Add New', JOBWP_TXT_DOMAIN ),
-            'edit_item'          => __( 'Edit Job', JOBWP_TXT_DOMAIN ),
-            'update_item'        => __( 'Update Job', JOBWP_TXT_DOMAIN ),
-            'search_items'       => __( 'Search Job', JOBWP_TXT_DOMAIN ),
-            'not_found'          => __( 'Not Found', JOBWP_TXT_DOMAIN ),
-            'not_found_in_trash' => __( 'Not found in Trash', JOBWP_TXT_DOMAIN ),
+            'name'               => __( 'All Jobs', 'jobwp' ),
+            'singular_name'      => __( 'WP Jobs', 'jobwp' ),
+            'menu_name'          => __( 'WP Jobs', 'jobwp' ),
+            'parent_item_colon'  => __( 'Parent Job', 'jobwp' ),
+            'all_items'          => __( 'All Jobs', 'jobwp' ),
+            'view_item'          => __( 'View Job', 'jobwp' ),
+            'add_new_item'       => __( 'Add New Job', 'jobwp' ),
+            'add_new'            => __( 'Add New', 'jobwp' ),
+            'edit_item'          => __( 'Edit Job', 'jobwp' ),
+            'update_item'        => __( 'Update Job', 'jobwp' ),
+            'search_items'       => __( 'Search Job', 'jobwp' ),
+            'not_found'          => __( 'Not Found', 'jobwp' ),
+            'not_found_in_trash' => __( 'Not found in Trash', 'jobwp' ),
         );
         $args = array(
-            'label'               => __( 'jobs', JOBWP_TXT_DOMAIN ),
-            'description'         => __( 'Description For Job', JOBWP_TXT_DOMAIN ),
+            'label'               => __( 'jobs', 'jobwp' ),
+            'description'         => __( 'Description For Job', 'jobwp' ),
             'labels'              => $labels,
             'supports'            => array(
                 'title',
@@ -367,6 +368,9 @@ class JobWp_Admin {
             'publicly_queryable'  => true,
             'capability_type'     => 'post',
             'menu_icon'           => 'dashicons-portfolio',
+            'rewrite'             => array(
+                'slug' => esc_html( $bg_slug ),
+            ),
         );
         register_post_type( 'jobs', $args );
     }
@@ -376,17 +380,17 @@ class JobWp_Admin {
      */
     function jobwp_taxonomy() {
         $category = array(
-            'name'              => __( 'Job Categories', JOBWP_TXT_DOMAIN ),
-            'singular_name'     => __( 'Job Category', JOBWP_TXT_DOMAIN ),
-            'search_items'      => __( 'Search Job Categories', JOBWP_TXT_DOMAIN ),
-            'all_items'         => __( 'All Job Categories', JOBWP_TXT_DOMAIN ),
-            'parent_item'       => __( 'Parent Job Category', JOBWP_TXT_DOMAIN ),
-            'parent_item_colon' => __( 'Parent Job Category:', JOBWP_TXT_DOMAIN ),
-            'edit_item'         => __( 'Edit Job Category', JOBWP_TXT_DOMAIN ),
-            'update_item'       => __( 'Update Job Category', JOBWP_TXT_DOMAIN ),
-            'add_new_item'      => __( 'Add New Job Category', JOBWP_TXT_DOMAIN ),
-            'new_item_name'     => __( 'New Job Category Name', JOBWP_TXT_DOMAIN ),
-            'menu_name'         => __( 'Job Categories', JOBWP_TXT_DOMAIN ),
+            'name'              => __( 'Job Categories', 'jobwp' ),
+            'singular_name'     => __( 'Job Category', 'jobwp' ),
+            'search_items'      => __( 'Search Job Categories', 'jobwp' ),
+            'all_items'         => __( 'All Job Categories', 'jobwp' ),
+            'parent_item'       => __( 'Parent Job Category', 'jobwp' ),
+            'parent_item_colon' => __( 'Parent Job Category:', 'jobwp' ),
+            'edit_item'         => __( 'Edit Job Category', 'jobwp' ),
+            'update_item'       => __( 'Update Job Category', 'jobwp' ),
+            'add_new_item'      => __( 'Add New Job Category', 'jobwp' ),
+            'new_item_name'     => __( 'New Job Category Name', 'jobwp' ),
+            'menu_name'         => __( 'Job Categories', 'jobwp' ),
         );
         register_taxonomy( 'jobs_category', array('jobs'), array(
             'hierarchical'      => true,
@@ -405,17 +409,17 @@ class JobWp_Admin {
             ],
         ) );
         $nature = array(
-            'name'              => __( 'Job Nature', JOBWP_TXT_DOMAIN ),
-            'singular_name'     => __( 'Job Nature', JOBWP_TXT_DOMAIN ),
-            'search_items'      => __( 'Search Job Nature', JOBWP_TXT_DOMAIN ),
-            'all_items'         => __( 'All Job Nature', JOBWP_TXT_DOMAIN ),
-            'parent_item'       => __( 'Parent Job Nature', JOBWP_TXT_DOMAIN ),
-            'parent_item_colon' => __( 'Parent Job Nature:', JOBWP_TXT_DOMAIN ),
-            'edit_item'         => __( 'Edit Job Nature', JOBWP_TXT_DOMAIN ),
-            'update_item'       => __( 'Update Job Nature', JOBWP_TXT_DOMAIN ),
-            'add_new_item'      => __( 'Add New Job Nature', JOBWP_TXT_DOMAIN ),
-            'new_item_name'     => __( 'New Job Nature Name', JOBWP_TXT_DOMAIN ),
-            'menu_name'         => __( 'Job Nature', JOBWP_TXT_DOMAIN ),
+            'name'              => __( 'Job Nature', 'jobwp' ),
+            'singular_name'     => __( 'Job Nature', 'jobwp' ),
+            'search_items'      => __( 'Search Job Nature', 'jobwp' ),
+            'all_items'         => __( 'All Job Nature', 'jobwp' ),
+            'parent_item'       => __( 'Parent Job Nature', 'jobwp' ),
+            'parent_item_colon' => __( 'Parent Job Nature:', 'jobwp' ),
+            'edit_item'         => __( 'Edit Job Nature', 'jobwp' ),
+            'update_item'       => __( 'Update Job Nature', 'jobwp' ),
+            'add_new_item'      => __( 'Add New Job Nature', 'jobwp' ),
+            'new_item_name'     => __( 'New Job Nature Name', 'jobwp' ),
+            'menu_name'         => __( 'Job Nature', 'jobwp' ),
         );
         register_taxonomy( 'jobs_nature', array('jobs'), array(
             'hierarchical'      => true,
@@ -434,17 +438,17 @@ class JobWp_Admin {
             ],
         ) );
         $position = array(
-            'name'              => __( 'Job Level', JOBWP_TXT_DOMAIN ),
-            'singular_name'     => __( 'Job Level', JOBWP_TXT_DOMAIN ),
-            'search_items'      => __( 'Search Job Level', JOBWP_TXT_DOMAIN ),
-            'all_items'         => __( 'All Job Level', JOBWP_TXT_DOMAIN ),
-            'parent_item'       => __( 'Parent Job Level', JOBWP_TXT_DOMAIN ),
-            'parent_item_colon' => __( 'Parent Job Level:', JOBWP_TXT_DOMAIN ),
-            'edit_item'         => __( 'Edit Job Level', JOBWP_TXT_DOMAIN ),
-            'update_item'       => __( 'Update Job Level', JOBWP_TXT_DOMAIN ),
-            'add_new_item'      => __( 'Add New Job Level', JOBWP_TXT_DOMAIN ),
-            'new_item_name'     => __( 'New Job Level Name', JOBWP_TXT_DOMAIN ),
-            'menu_name'         => __( 'Job Level', JOBWP_TXT_DOMAIN ),
+            'name'              => __( 'Job Level', 'jobwp' ),
+            'singular_name'     => __( 'Job Level', 'jobwp' ),
+            'search_items'      => __( 'Search Job Level', 'jobwp' ),
+            'all_items'         => __( 'All Job Level', 'jobwp' ),
+            'parent_item'       => __( 'Parent Job Level', 'jobwp' ),
+            'parent_item_colon' => __( 'Parent Job Level:', 'jobwp' ),
+            'edit_item'         => __( 'Edit Job Level', 'jobwp' ),
+            'update_item'       => __( 'Update Job Level', 'jobwp' ),
+            'add_new_item'      => __( 'Add New Job Level', 'jobwp' ),
+            'new_item_name'     => __( 'New Job Level Name', 'jobwp' ),
+            'menu_name'         => __( 'Job Level', 'jobwp' ),
         );
         register_taxonomy( 'jobs_level', array('jobs'), array(
             'hierarchical'      => true,
@@ -463,17 +467,17 @@ class JobWp_Admin {
             ],
         ) );
         $location = array(
-            'name'              => __( 'Job Location', JOBWP_TXT_DOMAIN ),
-            'singular_name'     => __( 'Job Location', JOBWP_TXT_DOMAIN ),
-            'search_items'      => __( 'Search Job Location', JOBWP_TXT_DOMAIN ),
-            'all_items'         => __( 'All Job Location', JOBWP_TXT_DOMAIN ),
-            'parent_item'       => __( 'Parent Job Location', JOBWP_TXT_DOMAIN ),
-            'parent_item_colon' => __( 'Parent Job Location:', JOBWP_TXT_DOMAIN ),
-            'edit_item'         => __( 'Edit Job Location', JOBWP_TXT_DOMAIN ),
-            'update_item'       => __( 'Update Job Location', JOBWP_TXT_DOMAIN ),
-            'add_new_item'      => __( 'Add New Job Location', JOBWP_TXT_DOMAIN ),
-            'new_item_name'     => __( 'New Job Location Name', JOBWP_TXT_DOMAIN ),
-            'menu_name'         => __( 'Job Location', JOBWP_TXT_DOMAIN ),
+            'name'              => __( 'Job Location', 'jobwp' ),
+            'singular_name'     => __( 'Job Location', 'jobwp' ),
+            'search_items'      => __( 'Search Job Location', 'jobwp' ),
+            'all_items'         => __( 'All Job Location', 'jobwp' ),
+            'parent_item'       => __( 'Parent Job Location', 'jobwp' ),
+            'parent_item_colon' => __( 'Parent Job Location:', 'jobwp' ),
+            'edit_item'         => __( 'Edit Job Location', 'jobwp' ),
+            'update_item'       => __( 'Update Job Location', 'jobwp' ),
+            'add_new_item'      => __( 'Add New Job Location', 'jobwp' ),
+            'new_item_name'     => __( 'New Job Location Name', 'jobwp' ),
+            'menu_name'         => __( 'Job Location', 'jobwp' ),
         );
         register_taxonomy( 'jobs_location', array('jobs'), array(
             'hierarchical'      => true,
@@ -494,7 +498,7 @@ class JobWp_Admin {
     function jobwp_metaboxes() {
         add_meta_box(
             'jobwp_metaboxes',
-            __( 'Job Details:', JOBWP_TXT_DOMAIN ),
+            __( 'Job Details:', 'jobwp' ),
             array($this, JOBWP_PRFX . 'metabox_content'),
             'jobs',
             'normal',
@@ -502,7 +506,7 @@ class JobWp_Admin {
         );
         add_meta_box(
             'jobwp-metabox-responsibilities',
-            __( 'Responsibilities / Roles', JOBWP_TXT_DOMAIN ),
+            __( 'Responsibilities / Roles', 'jobwp' ),
             array($this, 'jobwp_metabox_responsibilities'),
             'jobs',
             'normal',
@@ -510,7 +514,7 @@ class JobWp_Admin {
         );
         add_meta_box(
             'jobwp-metabox-skills',
-            __( 'Skills Required:', JOBWP_TXT_DOMAIN ),
+            __( 'Skills Required:', 'jobwp' ),
             array($this, 'jobwp_metabox_skills'),
             'jobs',
             'normal',
@@ -518,7 +522,7 @@ class JobWp_Admin {
         );
         add_meta_box(
             'jobwp-metabox-educational-requirements',
-            __( 'Educational Requirements:', JOBWP_TXT_DOMAIN ),
+            __( 'Educational Requirements:', 'jobwp' ),
             array($this, 'jobwp_metabox_educational_requirements'),
             'jobs',
             'normal',
@@ -526,7 +530,7 @@ class JobWp_Admin {
         );
         add_meta_box(
             'jobwp-metabox-additional-requirements',
-            __( 'Additional Requirements:', JOBWP_TXT_DOMAIN ),
+            __( 'Additional Requirements:', 'jobwp' ),
             array($this, 'jobwp_metabox_additional_requirements'),
             'jobs',
             'normal',
@@ -534,7 +538,7 @@ class JobWp_Admin {
         );
         add_meta_box(
             'jobwp-metabox-salary',
-            __( 'Salary:', JOBWP_TXT_DOMAIN ),
+            __( 'Salary:', 'jobwp' ),
             array($this, 'jobwp_metaboxe_salary'),
             'jobs',
             'normal',
@@ -542,7 +546,7 @@ class JobWp_Admin {
         );
         add_meta_box(
             'jobwp-metabox-benefits',
-            __( 'Other Benefits:', JOBWP_TXT_DOMAIN ),
+            __( 'Other Benefits:', 'jobwp' ),
             array($this, 'jobwp_metabox_other_benefits'),
             'jobs',
             'normal',
@@ -706,17 +710,17 @@ class JobWp_Admin {
         ?>">
 			<span class="jobwp-closebtn">&times;</span>
 			<strong><?php 
-        esc_html_e( ucfirst( $type ), JOBWP_TXT_DOMAIN );
+        esc_html_e( ucfirst( $type ), 'jobwp' );
         ?>!</strong>
 			<?php 
-        esc_html_e( $msg, JOBWP_TXT_DOMAIN );
+        esc_html_e( $msg, 'jobwp' );
         ?>
 		</div>
 		<?php 
     }
 
     /**
-     * 
+     *  Get all applicaitons
      */
     private function jobwp_get_all_applications() {
         global $wpdb;
@@ -739,7 +743,7 @@ class JobWp_Admin {
             if ( file_exists( $fileName ) ) {
                 unlink( $fileName );
             }
-            return __( "Application has been deleted.", JOBWP_TXT_DOMAIN );
+            return __( "Application has been deleted.", 'jobwp' );
         }
     }
 
@@ -757,7 +761,7 @@ class JobWp_Admin {
 		<div class="form-field term-group">
 
 			<label for="jobwp_company_email"><?php 
-        _e( 'Company Email', JOBWP_TXT_DOMAIN );
+        _e( 'Company Email', 'jobwp' );
         ?></label>
 			<input type="text" id="jobwp_company_email" name="jobwp_company_email" class="jobwp_company_email">
 
@@ -765,7 +769,7 @@ class JobWp_Admin {
 		<div class="form-field term-group">
 
 			<label for="jobwp_company_web"><?php 
-        _e( 'Company Website', JOBWP_TXT_DOMAIN );
+        _e( 'Company Website', 'jobwp' );
         ?></label>
 			<input type="text" id="jobwp_company_web" name="jobwp_company_web" class="jobwp_company_web">
 			
@@ -773,7 +777,7 @@ class JobWp_Admin {
 		<div class="form-field term-group">
 
 			<label for="jobwp_company_addr"><?php 
-        _e( 'Company Address', JOBWP_TXT_DOMAIN );
+        _e( 'Company Address', 'jobwp' );
         ?></label>
 			<input type="text" id="jobwp_company_addr" name="jobwp_company_addr" class="jobwp_company_addr">
 			
@@ -781,7 +785,7 @@ class JobWp_Admin {
 		<div class="form-field term-group">
 
 			<label for="jobwp_company_logo_id"><?php 
-        _e( 'Company Logo', JOBWP_TXT_DOMAIN );
+        _e( 'Company Logo', 'jobwp' );
         ?></label>
 			<input type="hidden" id="jobwp_company_logo_id" name="jobwp_company_logo_id" class="jobwp_company_logo_id" value="">
 
@@ -789,10 +793,10 @@ class JobWp_Admin {
 
 			<p>
 				<input type="button" class="button button-secondary jobwp_company_logo_button_add" id="jobwp_company_logo_button_add" name="jobwp_company_logo_button_add" value="<?php 
-        _e( 'Add Logo', JOBWP_TXT_DOMAIN );
+        _e( 'Add Logo', 'jobwp' );
         ?>">
 				<input type="button" class="button button-secondary jobwp_company_logo_button_remove" id="jobwp_company_logo_button_remove" name="jobwp_company_logo_button_remove" value="<?php 
-        _e( 'Remove Logo', JOBWP_TXT_DOMAIN );
+        _e( 'Remove Logo', 'jobwp' );
         ?>">
 			</p>
 
@@ -804,10 +808,10 @@ class JobWp_Admin {
      * Company Extra Column Header
      */
     function jobwp_display_company_extra_column_header( $columns ) {
-        $columns['jobwp_company_logo'] = __( 'Logo', JOBWP_TXT_DOMAIN );
-        $columns['jobwp_company_email'] = __( 'Email', JOBWP_TXT_DOMAIN );
-        $columns['jobwp_company_web'] = __( 'Website', JOBWP_TXT_DOMAIN );
-        $columns['jobwp_company_addr'] = __( 'Address', JOBWP_TXT_DOMAIN );
+        $columns['jobwp_company_logo'] = __( 'Logo', 'jobwp' );
+        $columns['jobwp_company_email'] = __( 'Email', 'jobwp' );
+        $columns['jobwp_company_web'] = __( 'Website', 'jobwp' );
+        $columns['jobwp_company_addr'] = __( 'Address', 'jobwp' );
         return $columns;
     }
 

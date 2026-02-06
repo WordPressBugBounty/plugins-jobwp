@@ -28,7 +28,7 @@ _e( 'Details Page Layout', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -44,7 +44,7 @@ _e( 'Job Title Tag', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -60,7 +60,7 @@ _e( 'Display Company Name', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -76,7 +76,7 @@ _e( 'Display Company Logo', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -484,7 +484,7 @@ _e( 'Hide Share On', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -498,7 +498,7 @@ _e( 'Label Text', 'jobwp' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>

@@ -34,7 +34,7 @@ _e( 'Background Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -58,7 +58,7 @@ _e( 'Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -72,7 +72,7 @@ _e( 'Font Size', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -96,7 +96,7 @@ _e( 'Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -110,7 +110,7 @@ _e( 'Font Size', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -134,7 +134,7 @@ _e( 'Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -148,7 +148,7 @@ _e( 'Font Size', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -164,7 +164,7 @@ _e( 'Background Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -178,7 +178,7 @@ _e( 'Border Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -202,7 +202,7 @@ _e( 'Background Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -218,7 +218,7 @@ _e( 'Font Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -232,7 +232,7 @@ _e( 'Font Size', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -256,7 +256,7 @@ _e( 'Background Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>
@@ -270,7 +270,7 @@ _e( 'Font Color', 'jobwp' );
                 <?php 
 ?>
 					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
 ?></span>
 					<?php 
 ?>

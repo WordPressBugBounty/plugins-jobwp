@@ -76,4 +76,5 @@ if ( !function_exists( 'job_fs' ) ) {
     }
 
     job_fs()->add_action( 'after_uninstall', 'job_fs_uninstall_cleanup' );
+    job_fs()->add_filter( 'pricing/show_annual_in_monthly', '__return_false' );
 }

@@ -18,6 +18,22 @@ $single_items = $this->get_single_items_order();
 wp_nonce_field( 'jobwp_single_content_action', 'jobwp_single_content_nonce' );
 ?>
     <table class="jobwp-single-settings-table" id="jobwp-single-content-settings-table">
+        <tr class="jobwp_single_layout">
+            <th scope="row">
+                <label><?php 
+_e( 'Details Page Layout', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
         <tr class="jobwp_single_title_tag">
             <th scope="row">
                 <label for="jobwp_single_title_tag"><?php 

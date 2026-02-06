@@ -6,6 +6,13 @@
     padding-top: 50px;
 }
 
+.jobwp-listing-parent-wrapper {
+    border: 0px solid #000;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
 .jobwp-listing-body-container {
     margin: 20px auto;
     border: 0px solid #000;
@@ -369,16 +376,16 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     padding: 15px 13px;
     line-height: 30px;
     height: 45px;
-    color: #333!important;
+    color: #333;
 }
 
-.jobwp-search-container .jobwp-search-item .submit-btn {
+.jobwp-search-container .jobwp-search-item .button.submit-btn {
     width: 150px;
     height: 45px;
     background: #13b5ea;
     color: #ffffff;
     font-size: 14px;
-    border: none;
+    border: 1px solid #DDD;
     border-radius: 5px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -398,15 +405,14 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     color: #666666;
     padding: 10px;
     font-size: 18px;
-    line-height: 25px;
-    border: none;
+    line-height: 23px;
     border-radius: 5px;
     font-weight: 700;
     letter-spacing: 0.5px;
     cursor: pointer;
     display: block;
     width: 50px;
-    height: 45px;
+    height: 46px;
     border: 1px solid #666666;
     text-decoration: none;
 }
@@ -596,6 +602,39 @@ ul.jobwp-share-on li a.jobwp-share-on-link {
 ul.jobwp-share-on li a.jobwp-share-on-link:hover {
     background: #777;
 }
+
+
+/* Vertical Layout Started */
+
+.jobwp-single-body-container.vertical .jobwp-single-area .content-row {
+    padding: 0px 50px;
+}
+
+.jobwp-single-body-container.vertical .jobwp-single-area .content-row .left-cell,
+.jobwp-single-body-container.vertical .jobwp-single-area .content-row .right-cell {
+    border: 0px solid #009900;
+    width: 100%;
+    float: none;
+    text-align: left;
+}
+
+.jobwp-single-body-container.vertical .jobwp-single-area .content-row .left-cell {
+    padding-bottom: 10px;
+}
+
+.jobwp-single-body-container.vertical .jobwp-single-area .content-row .right-cell {
+    border-top: 1px solid #999;
+    padding: 10px 0 10px 0px;
+}
+
+.jobwp-single-body-container.vertical .jobwp-single-area .content-row .right-cell ul {
+    margin: 0 0 0 15px;
+    padding: 0;
+    list-style: disc;
+}
+
+
+/* Vertical Layout Ended */
 
 
 /* Details Ended */
@@ -800,6 +839,9 @@ ul.jobwp-share-on li a.jobwp-share-on-link:hover {
     .circulr-details-top p.jobwp-job-title {
         font-size: 22px;
         line-height: 26px;
+    }
+    .jobwp-single-body-container.vertical .jobwp-single-area .content-row {
+        padding: 0 20px;
     }
     .jobwp-single-area .content-row .left-cell,
     .left-cell {

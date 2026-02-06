@@ -88,6 +88,51 @@ trait Jobwp_Search_Styles_Settings
                 'type'      => 'number',
                 'default'   => '0',
             ],
+            [
+                'name'      => 'jobwp_reset_btn_bg_color',
+                'type'      => 'text',
+                'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'jobwp_reset_btn_font_color',
+                'type'      => 'text',
+                'default'   => '#666666',
+            ],
+            [
+                'name'      => 'jobwp_reset_btn_border_color',
+                'type'      => 'text',
+                'default'   => '#666666',
+            ],
+            [
+                'name'      => 'jobwp_reset_btn_bg_color_hvr',
+                'type'      => 'text',
+                'default'   => '#13b5ea',
+            ],
+            [
+                'name'      => 'jobwp_reset_btn_font_color_hvr',
+                'type'      => 'text',
+                'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'jobwp_reset_btn_border_color_hvr',
+                'type'      => 'text',
+                'default'   => '#13b5ea',
+            ],
+            [
+                'name'      => 'jobwp_search_item_font_color',
+                'type'      => 'text',
+                'default'   => '#333333',
+            ],
+            [
+                'name'      => 'jobwp_search_btn_border_color',
+                'type'      => 'text',
+                'default'   => '#DDDDDD',
+            ],
+            [
+                'name'      => 'jobwp_search_btn_border_color_hvr',
+                'type'      => 'text',
+                'default'   => '#DDDDDD',
+            ],
         ];
     }
 }

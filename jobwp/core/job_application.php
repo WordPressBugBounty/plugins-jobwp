@@ -22,7 +22,7 @@ trait Jobwp_Applicaiton
                     } else {
                         $jobwpDir = wp_upload_dir();
                         $jobwpDir = $jobwpDir['basedir'];
-                        $uniqueFile = uniqid() . '-' . $_FILES['jobwp_upload_resume']['name'];
+                        $uniqueFile = uniqid() . '-' . sanitize_file_name( $_FILES['jobwp_upload_resume']['name'] );
                         $fileName = $jobwpDir . '/jobwp-resume/' . $uniqueFile;
                         if ( !is_writable( $jobwpDir . '/jobwp-resume' ) ) {
                             return __( 'The folder', 'jobwp' ) . ' ' . $jobwpDir . '/jobwp-resume ' . __( 'cannot be created or is not writable. Ask for support to your hosting provider', 'jobwp' ) . '.';

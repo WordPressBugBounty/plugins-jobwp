@@ -6,14 +6,18 @@ if ( !defined( 'ABSPATH' ) ) {
 $showMessage = '';
 // Delete Single Application
 if ( isset( $_GET['delID'] ) ) {
-    $showMessage = $this->jobwp_delete_single_application( $_GET['delID'] );
+    if ( !isset( $_GET['application_list_nonce'] ) || !wp_verify_nonce( $_GET['application_list_nonce'], 'application_list_action' ) ) {
+        $showMessage = __( 'Sorry, your nonce did not verify.', 'jobwp' );
+    } else {
+        $showMessage = $this->jobwp_delete_single_application( $_GET['delID'] );
+    }
 }
 $jobwpDir = wp_upload_dir();
 $jobwpDir = $jobwpDir['baseurl'] . '/jobwp-resume';
 ?>
 <div class="settings-banner">
     <h2><i class="fa-solid fa-list-check"></i>&nbsp;<?php 
-_e( 'Application Lists', JOBWP_TXT_DOMAIN );
+_e( 'Application Lists', 'jobwp' );
 ?></h2>
 </div>
 <?php 
@@ -58,7 +62,7 @@ if ( count( $applications ) > 0 ) {
         esc_html_e( $application->applicant_message );
         ?></td>
                     <td><a href="<?php 
-        printf( '%s/%s', $jobwpDir, $application->resume_name );
+        echo esc_url( $jobwpDir . '/' . $application->resume_name );
         ?>"><?php 
         esc_html_e( $application->resume_name );
         ?></a></td>
@@ -70,10 +74,10 @@ if ( count( $applications ) > 0 ) {
         ?>
                     <td>
                         <span class="delReq">
-                            <a href="?post_type=jobs&page=jobwp-application-list&delID=<?php 
-        esc_attr_e( $application->job_id );
+                            <a href="<?php 
+        print wp_nonce_url( '?post_type=jobs&page=jobwp-application-list&delID=' . esc_attr( $application->job_id ) . '', 'application_list_action', 'application_list_nonce' );
         ?>" class="reqDel"><?php 
-        _e( 'DELETE', JOBWP_TXT_DOMAIN );
+        _e( 'DELETE', 'jobwp' );
         ?></a>
                         </span>
                     </td>
@@ -97,7 +101,7 @@ print_column_headers( 'jobwp-allication-table-column', false );
 <?php 
 ?>
     <a href="#" class="button button-primary jobwp-button"><?php 
-_e( 'Please Upgrade to Export in CSV/Excel', JOBWP_TXT_DOMAIN );
+_e( 'Please Upgrade to Export in CSV/Excel', 'jobwp' );
 ?></a><br>
     <span><?php 
 echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now to Export', 'jobwp' ) . '</a>';

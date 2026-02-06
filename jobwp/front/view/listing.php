@@ -291,3 +291,5 @@ if ( $jobwpJobs->have_posts() ) {
     ?></p>
     <?php 
 }
+?>
+</div>

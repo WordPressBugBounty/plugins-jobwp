@@ -15,10 +15,11 @@ foreach ( $jobwpSearchContent as $option_name => $option_value ) {
 wp_nonce_field( 'jobwp_search_content_action', 'jobwp_search_content_nonce' );
 ?>
     <table class="jobwp-listing-content-settings-table">
+        <!-- Hide Search Panel -->
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_search_panel"><?php 
-_e( 'Hide Search Panel', JOBWP_TXT_DOMAIN );
+_e( 'Hide Search Panel', 'jobwp' );
 ?>?</label>
             </th>
             <td colspan="3">
@@ -27,11 +28,12 @@ echo ( $jobwp_hide_search_panel ? 'checked' : '' );
 ?>>
             </td>
         </tr>
-        <tr><td colspan="4"><hr></td></tr>
+        <tr><td colspan="6"><hr></td></tr>
+        <!-- Hide Keyword/Title -->
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_search_keyword"><?php 
-_e( 'Hide Keyword', JOBWP_TXT_DOMAIN );
+_e( 'Hide Keyword/Title', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -41,7 +43,7 @@ echo ( $jobwp_hide_search_keyword ? 'checked' : '' );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
+_e( 'Placeholder Text', 'jobwp' );
 ?></label>
             </th>
             <td>
@@ -49,11 +51,26 @@ _e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
 esc_attr_e( $jobwp_search_keyword_ph );
 ?>" />
             </td>
+            <th scope="row">
+                <label for="jobwp_search_title_order"><?php 
+_e( 'Order', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
         </tr>
+        <!-- Hide Category -->
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_search_category"><?php 
-_e( 'Hide Category', JOBWP_TXT_DOMAIN );
+_e( 'Hide Category', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -63,7 +80,7 @@ echo ( $jobwp_hide_search_category ? 'checked' : '' );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
+_e( 'Placeholder Text', 'jobwp' );
 ?></label>
             </th>
             <td>
@@ -71,11 +88,25 @@ _e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
 esc_attr_e( $jobwp_search_category_ph );
 ?>" />
             </td>
+            <th scope="row">
+                <label for="jobwp_search_category_order"><?php 
+_e( 'Order', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
         </tr>
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_search_jobtype"><?php 
-_e( 'Hide Job Type', JOBWP_TXT_DOMAIN );
+_e( 'Hide Job Type', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -85,7 +116,7 @@ echo ( $jobwp_hide_search_jobtype ? 'checked' : '' );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
+_e( 'Placeholder Text', 'jobwp' );
 ?></label>
             </th>
             <td>
@@ -93,11 +124,25 @@ _e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
 esc_attr_e( $jobwp_search_jobtype_ph );
 ?>" />
             </td>
+            <th scope="row">
+                <label for="jobwp_search_type_order"><?php 
+_e( 'Order', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
         </tr>
         <tr>
             <th scope="row">
                 <label for="jobwp_hide_search_location"><?php 
-_e( 'Hide Job Location', JOBWP_TXT_DOMAIN );
+_e( 'Hide Job Location', 'jobwp' );
 ?>?</label>
             </th>
             <td>
@@ -107,7 +152,7 @@ echo ( $jobwp_hide_search_location ? 'checked' : '' );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
+_e( 'Placeholder Text', 'jobwp' );
 ?></label>
             </th>
             <td>
@@ -115,42 +160,70 @@ _e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
 esc_attr_e( $jobwp_search_location_ph );
 ?>" />
             </td>
-        </tr>
-        <tr>
             <th scope="row">
-                <label for="jobwp_hide_search_level"><?php 
-_e( 'Hide Job Level', JOBWP_TXT_DOMAIN );
-?>?</label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Placeholder Text', JOBWP_TXT_DOMAIN );
+                <label for="jobwp_search_location_order"><?php 
+_e( 'Order', 'jobwp' );
 ?></label>
             </th>
             <td>
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now', 'jobwp' ) . '</a>';
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
 ?></span>
                     <?php 
 ?>
             </td>
         </tr>
-        <tr><td colspan="4"><hr></td></tr>
+        <tr>
+            <th scope="row">
+                <label for="jobwp_hide_search_level"><?php 
+_e( 'Hide Job Level', 'jobwp' );
+?>?</label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Placeholder Text', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label for="jobwp_search_level_order"><?php 
+_e( 'Order', 'jobwp' );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', 'jobwp' ) . '</a>';
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <tr><td colspan="6"><hr></td></tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Search Button Text', JOBWP_TXT_DOMAIN );
+_e( 'Search Button Text', 'jobwp' );
 ?></label>
             </th>
             <td colspan="3">
@@ -164,7 +237,7 @@ esc_attr_e( $jobwp_search_button_txt );
     <p class="submit">
         <button id="updateSearchContent" name="updateSearchContent" class="button button-primary jobwp-button">
             <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 
-_e( 'Save Settings', JOBWP_TXT_DOMAIN );
+_e( 'Save Settings', 'jobwp' );
 ?>
         </button>
     </p>

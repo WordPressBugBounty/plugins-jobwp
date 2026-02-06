@@ -185,7 +185,7 @@ JobWP works with **any modern WordPress theme** and is fully responsive. It inhe
 
 = Can applicants upload resumes or CV files? =
 
-Yes. **Resume and CV uploads** (PDF) are supported, making it easy to collect candidate information during job applications. **DOC, DOCX** formats are [Available in JobWP Pro](https://wpjoblisting.com/)
+Yes. **Resume and CV uploads** (PDF) are supported, making it easy to collect candidate information during job applications. **DOC, DOCX** formats are available in JobWP Pro.
 
 = Can I create a career page for my company? =
 

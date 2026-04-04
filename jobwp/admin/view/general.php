@@ -166,6 +166,39 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Profes
 ?>
                             </td>
                         </tr>
+                        <!-- Redirect After Apply -->
+                        <tr>
+                            <th scope="row">
+                                <label for="jobwp_allow_redirect_after_application"><?php 
+_e( 'Redirect After Application', 'jobwp' );
+?>?</label>
+                            </th>
+                            <td>
+                                <?php 
+?>
+                                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
+?></span>
+                                    <?php 
+?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label><?php 
+_e( 'Select Redirect Page', 'wp-stripe-donation' );
+?></label>
+                            </th>
+                            <td colspan="5">
+                                <?php 
+?>
+                                    <span><?php 
+echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
+?></span>
+                                    <?php 
+?>
+                            </td>
+                        </tr>
                         <!-- Captcha -->
                         <tr>
                             <td colspan="2" style="font-size: 18px;">

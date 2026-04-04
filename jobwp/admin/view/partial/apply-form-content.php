@@ -37,6 +37,7 @@ esc_attr_e( $jobwp_apply_form_title );
 ?>" />
             </td>
         </tr>
+        <!-- Name -->
         <tr>
             <th scope="row">
                 <label><?php 
@@ -49,6 +50,7 @@ esc_attr_e( $jobwp_apply_form_name_label );
 ?>" />
             </td>
         </tr>
+        <!-- Email -->
         <tr>
             <th scope="row">
                 <label><?php 
@@ -58,29 +60,6 @@ _e( 'Email Label', 'jobwp' );
             <td colspan="5">
                 <input type="text" name="jobwp_apply_form_email_label" id="jobwp_apply_form_email_label" class="regular-text" value="<?php 
 esc_attr_e( $jobwp_apply_form_email_label );
-?>" />
-            </td>
-        </tr>
-        <!-- Cover Letter -->
-        <tr>
-            <th scope="row">
-                <label for="jobwp_hide_apply_form_cover"><?php 
-_e( 'Hide Cover Letter', 'jobwp' );
-?>?</label>
-            </th>
-            <td>
-                <input type="checkbox" name="jobwp_hide_apply_form_cover" id="jobwp_hide_apply_form_cover" <?php 
-echo ( $jobwp_hide_apply_form_cover ? 'checked' : '' );
-?>>
-            </td>
-            <th scope="row" style="text-align: right;">
-                <label><?php 
-_e( 'Cover Letter Label', 'jobwp' );
-?></label>
-            </th>
-            <td colspan="3">
-                <input type="text" name="jobwp_apply_form_cover_letter_label" id="jobwp_apply_form_cover_letter_label" class="medium-text" value="<?php 
-esc_attr_e( $jobwp_apply_form_cover_letter_label );
 ?>" />
             </td>
         </tr>
@@ -127,10 +106,73 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Profes
 ?></span>
                     <?php 
 ?>
-                <code>2 digit codes (ISO 3166-1)</code>
+                <code><?php 
+_e( '2 digit codes (ISO 3166-1)', 'jobwp' );
+?></code>
             </td>
         </tr>
-        <tr><td colspan="6"><hr></td></tr>
+        <!-- Cover Letter -->
+        <tr>
+            <th scope="row">
+                <label for="jobwp_hide_apply_form_cover"><?php 
+_e( 'Hide Cover Letter', 'jobwp' );
+?>?</label>
+            </th>
+            <td>
+                <input type="checkbox" name="jobwp_hide_apply_form_cover" id="jobwp_hide_apply_form_cover" <?php 
+echo ( $jobwp_hide_apply_form_cover ? 'checked' : '' );
+?>>
+            </td>
+            <th scope="row" style="text-align: right;">
+                <label><?php 
+_e( 'Cover Letter Label', 'jobwp' );
+?></label>
+            </th>
+            <td colspan="3">
+                <input type="text" name="jobwp_apply_form_cover_letter_label" id="jobwp_apply_form_cover_letter_label" class="medium-text" value="<?php 
+esc_attr_e( $jobwp_apply_form_cover_letter_label );
+?>" />
+            </td>
+        </tr>
+        <!-- Upload Resume -->
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Upload Resume Label', 'jobwp' );
+?></label>
+            </th>
+            <td colspan="5">
+                <input type="text" name="jobwp_apply_form_upload_label" id="jobwp_apply_form_upload_label" class="regular-text" value="<?php 
+esc_attr_e( $jobwp_apply_form_upload_label );
+?>" />
+            </td>
+        </tr>
+        <!-- Attach Resume -->
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Attach Resume Label', 'jobwp' );
+?></label>
+            </th>
+            <td colspan="5">
+                <input type="text" name="jobwp_apply_form_attach_label" id="jobwp_apply_form_attach_label" class="regular-text" value="<?php 
+esc_attr_e( $jobwp_apply_form_attach_label );
+?>" />
+            </td>
+        </tr>
+        <!-- Allowed Types -->
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Allowed Types Label', 'jobwp' );
+?></label>
+            </th>
+            <td colspan="5">
+                <input type="text" name="jobwp_apply_form_allowed_types_label" id="jobwp_apply_form_allowed_types_label" class="regular-text" value="<?php 
+esc_attr_e( $jobwp_apply_form_allowed_types_label );
+?>" />
+            </td>
+        </tr>
         <!-- User Consent -->
         <tr>
             <th scope="row">
@@ -162,10 +204,11 @@ echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Profes
 ?>
             </td>
         </tr>
+        <!-- Apply Button -->
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Submit Button Text', 'jobwp' );
+_e( 'Apply Button Text', 'jobwp' );
 ?></label>
             </th>
             <td colspan="5">

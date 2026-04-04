@@ -28,6 +28,7 @@ foreach ( $jobwpGeneralSettings as $option_name => $option_value ) {
         ${"" . $option_name} = $option_value;
     }
 }
+// Email Aggregrate
 $wbgAbctEmail = [];
 if ( '' !== $jobwp_admin_noti_email ) {
     $wbgAbctEmail[] = sanitize_email( $jobwp_admin_noti_email );
@@ -50,6 +51,16 @@ if ( isset( $_FILES['jobwp_upload_resume']['name'] ) ) {
             $respKey = json_decode( wp_remote_retrieve_body( $response ) );
             if ( $respKey->success ) {
                 $resumeUploadMsg = $jobwp_front_new->jobwp_upload_resume( $_POST, $_FILES, $wbgAbctEmail );
+                if ( $jobwp_allow_redirect_after_application ) {
+                    $redirectPage = ( '' != $jobwp_redirect_page_after_submit ? $jobwp_redirect_page_after_submit : null );
+                    ?>
+                    <script type="text/javascript">
+                        window.location = "<?php 
+                    echo esc_url( home_url( '/' . $redirectPage ) );
+                    ?>";
+                    </script>
+                    <?php 
+                }
             } else {
                 $resumeUploadMsg = __( 'reCaptcha verification failed!', JOBWP_TXT_DOMAIN );
             }

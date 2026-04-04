@@ -11,18 +11,19 @@ if ( !function_exists( 'job_fs' ) ) {
             // Include Freemius SDK.
             require_once JOBWP_PATH . '/freemius/start.php';
             $job_fs = fs_dynamic_init( array(
-                'id'             => '10190',
-                'slug'           => 'jobwp',
-                'type'           => 'plugin',
-                'public_key'     => 'pk_e2d8d8f3056789d2b63d655f5f710',
-                'is_premium'     => false,
-                'premium_suffix' => 'Professional',
-                'has_addons'     => false,
-                'has_paid_plans' => true,
-                'menu'           => array(
+                'id'               => '10190',
+                'slug'             => 'jobwp',
+                'type'             => 'plugin',
+                'public_key'       => 'pk_e2d8d8f3056789d2b63d655f5f710',
+                'is_premium'       => false,
+                'premium_suffix'   => 'Professional',
+                'has_addons'       => false,
+                'has_paid_plans'   => true,
+                'menu'             => array(
                     'slug' => 'edit.php?post_type=jobs',
                 ),
-                'is_live'        => true,
+                'is_live'          => true,
+                'is_org_compliant' => true,
             ) );
         }
         return $job_fs;

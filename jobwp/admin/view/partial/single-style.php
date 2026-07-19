@@ -14,14 +14,12 @@ foreach ( $jobwpSingleStyles as $option_name => $option_value ) {
 <?php 
 wp_nonce_field( 'jobwp_single_style_action', 'jobwp_single_style_nonce' );
 ?>
-    <table class="jobwp-settings-table">
+    <table class="hm-settings-table jobwp-settings-table" cellpadding="0" cellspacing="0">
         <!-- Container -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-square-full"></i>&nbsp;<?php 
 _e( 'Container', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -58,13 +56,21 @@ esc_attr_e( $jobwp_single_container_margin_btm );
                 <code>px</code>
             </td>
         </tr>
-        <!-- Title -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <?php 
+echo '<tr><td colspan="6" style="padding:0;"></td></tr>';
+$jobwp_upgrade_arr = [
+    'label'   => 'Layout Column Width',
+    'icon'    => 'fa-solid fa-palette',
+    'message' => "Control left side, right side column width of the details page - applicable only for the Horizontal layout",
+    'colspan' => 4,
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
+?>
+        <!-- Job Title -->
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-t"></i>&nbsp;<?php 
 _e( 'Job Title', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -102,28 +108,12 @@ esc_attr_e( $jobwp_single_title_font_size );
             </td>
         </tr>
         <!-- Job Info -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-list"></i>&nbsp;<?php 
 _e( 'Job Info', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Column Width', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
             <th scope="row">
                 <label><?php 
 _e( 'Label Font Color', 'jobwp' );
@@ -140,7 +130,7 @@ esc_attr_e( $jobwp_single_info_lbl_font_color );
 _e( 'Label Font Size', 'jobwp' );
 ?>:</label>
             </th>
-            <td>
+            <td colspan="3">
                 <input type="number" class="small-text" min="11" max="50" name="jobwp_single_info_lbl_font_size" id="jobwp_single_info_lbl_font_size" value="<?php 
 esc_attr_e( $jobwp_single_info_lbl_font_size );
 ?>">
@@ -164,7 +154,7 @@ esc_attr_e( $jobwp_single_info_font_color );
 _e( 'Info Font Size', 'jobwp' );
 ?>:</label>
             </th>
-            <td>
+            <td colspan="3">
                 <input type="number" class="small-text" min="11" max="50" name="jobwp_single_info_font_size" id="jobwp_single_info_font_size" value="<?php 
 esc_attr_e( $jobwp_single_info_font_size );
 ?>">
@@ -172,12 +162,10 @@ esc_attr_e( $jobwp_single_info_font_size );
             </td>
         </tr>
         <!-- How to Apply -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-file-lines"></i>&nbsp;<?php 
 _e( 'How to Apply', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -250,12 +238,10 @@ esc_attr_e( $jobwp_single_howtoapply_content_size );
             </td>
         </tr>
         <!-- Apply Button -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-file-lines"></i>&nbsp;<?php 
 _e( 'Apply Button', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -336,18 +322,10 @@ esc_attr_e( $jobwp_single_apply_btn_brdr_radius );
                 <code>px</code>
             </td>
         </tr>
-        <!-- Apply Button: Hover -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
-_e( 'Apply Button: Hover', 'jobwp' );
-?></span><hr>
-            </th>
-        </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', 'jobwp' );
+_e( 'Hover Background Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -358,7 +336,7 @@ esc_attr_e( $jobwp_single_apply_btn_bg_clr_hvr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Border Color', 'jobwp' );
+_e( 'Hover Border Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -369,7 +347,7 @@ esc_attr_e( $jobwp_single_apply_btn_brdr_clr_hvr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Color', 'jobwp' );
+_e( 'Hover Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>

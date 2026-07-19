@@ -5,9 +5,105 @@
     margin-bottom: 20px;
 }
 
+table.hm-settings-table {
+    border-left: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+}
+
+table.hm-settings-table tr.jobwp-settings-section td {
+    background: #F2F2F2;
+    background-image: linear-gradient(to right, #FAFAFA, #fff);
+    color: #135e9b;
+    border-left: 2px solid #135e9b;
+}
+
+table.hm-settings-table tr td,
+table.hm-settings-table tr td label {
+    color: #135e9b;
+}
+
+table.hm-settings-table tr.upgrade-promotion th,
+table.hm-settings-table tr.upgrade-promotion td {
+    background: #F6EEDF;
+    border-bottom: 0.5px solid #fcd34d;
+    max-width: 250px;
+    background-image: linear-gradient(to right, #F6EEDF, #fff);
+    vertical-align: top;
+}
+
+table.hm-settings-table tr.upgrade-promotion th {
+    color: #805C1F;
+    width: 200px;
+    vertical-align: top;
+}
+
+table.hm-settings-table tr.upgrade-promotion th i {
+    margin-right: 5px;
+}
+
+table.hm-settings-table span {
+    font-size: 12px;
+    display: block;
+    margin-top: 10px;
+    color: #444;
+}
+
+table.hm-settings-table span.wp-color-result-text {
+    margin-top: 0;
+}
+
+table.hm-settings-table tr td input[type='checkbox'] {
+    border-color: #777 !important;
+    border-radius: 4px;
+}
+
+.wp-picker-container .wp-color-result.button {
+    border-color: #bbb;
+    border-radius: 4px;
+}
+
+table.hm-settings-table tr.upgrade-promotion td .pro-unlock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #FFF;
+    border: 0.5px solid #805C1F;
+    border-radius: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.pro-unlock-text {
+    font-size: 14px;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.pro-unlock-btn {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: #F6EEDF;
+    color: #805C1F;
+    border: 0.5px solid #805C1F;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.pro-unlock-btn:hover {
+    background: #805C1F;
+    color: #F6EEDF;
+}
+
 table.jobwp-settings-table,
 table.jobwp-listing-style-settings-table,
-table.jobwp-single-style-settings-table {
+table.jobwp-single-style-settings-table,
+table.jobwp-single-settings-table {
     width: 100%;
 }
 
@@ -21,11 +117,14 @@ table.jobwp-single-settings-table tr th,
 table.jobwp-single-settings-table tr td,
 table.jobwp-single-style-settings-table tr th,
 table.jobwp-single-style-settings-table tr td {
-    border: 0px solid #EAEAEA;
-    padding: 10px;
+    border-top: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-left: 0px solid #DDD;
+    border-bottom: 0px solid #DDD;
+    padding: 15px;
     text-align: left;
-    vertical-align: middle;
-    background-color: #F7F7F7;
+    vertical-align: top;
+    background-image: linear-gradient(to right, #f0fdf4, #fff);
 }
 
 table.jobwp-settings-table tr th,
@@ -34,16 +133,43 @@ table.jobwp-listing-style-settings-table tr th,
 table.jobwp-single-settings-table tr th,
 table.jobwp-single-style-settings-table tr th {
     font-weight: 600;
-    vertical-align: middle;
+    vertical-align: top;
+    background-color: #f0fdf4;
+    background-image: linear-gradient(to right, #f0fdf4, #fff);
+    color: #15803d;
 }
 
 table.jobwp-settings-table tr th {
     text-align: right;
+    vertical-align: top;
 }
 
 table.jobwp-listing-style-settings-table tr th {
     max-width: 120px;
     text-align: right;
+}
+
+td.jobwp-settings-block-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #FAF9F5 !important;
+    padding: 10px 20px !important;
+}
+
+table.jobwp-single-settings-table tr td input[type='text'],
+table.jobwp-single-settings-table tr td input[type='password'],
+table.jobwp-single-settings-table tr td select,
+table.jobwp-single-settings-table tr td textarea,
+table.jobwp-listing-content-settings-table tr td input[type='number'],
+table.jobwp-listing-content-settings-table tr td input[type='text'],
+table.jobwp-listing-content-settings-table tr td textarea,
+table.jobwp-listing-style-settings-table tr td input[type='number'],
+table.jobwp-settings-table tr td input[type='number'],
+table.jobwp-single-style-settings-table tr td input[type='number'] {
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #F7F7F7, #FFF);
+    border-color: #CCC;
 }
 
 .manage-column.column-jobwp_list_sl {
@@ -134,7 +260,6 @@ table.jobwp-listing-style-settings-table tr th {
     color: #FFF;
     border: 0px solid #5E24DD;
     border-radius: 5px;
-    padding: 6px 20px;
     font-size: 16px;
     font-weight: 600;
 }
@@ -256,11 +381,122 @@ table.jobwp-listing-style-settings-table tr th {
 }
 
 
+/* Suggested by Claude */
+
+.jobwp-admin-sidebar .postbox {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.postbox .inside ul.left {
+    text-align: left;
+    margin: 0 10px;
+}
+
+.jobwp-admin-sidebar .postbox.pro-features-block {
+    background: #FFF;
+    border: 2px solid #805C1F;
+    text-align: left;
+}
+
+.upgrade-card-head {
+    background: #F6EEDF;
+    padding: 12px 14px;
+}
+
+.upgrade-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #805C1F;
+    margin-bottom: 2px;
+}
+
+.upgrade-features {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.upgrade-feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid #DDD;
+}
+
+.upgrade-feat:last-child {
+    border-bottom: none;
+}
+
+.upgrade-feat-icon {
+    font-size: 14px;
+    color: #805C1F;
+    flex-shrink: 0;
+    margin-top: 1px;
+    line-height: 1.4;
+}
+
+.upgrade-feat.highlighted .upgrade-feat-text {
+    font-weight: 600;
+}
+
+.upgrade-feat-text {
+    font-size: 14px;
+    color: #232323;
+    line-height: 1.4;
+}
+
+.upgrade-feat-text span {
+    font-size: 12px;
+    color: #232323;
+    display: block;
+    margin-top: 1px;
+    font-weight: 500;
+}
+
+.upgrade-cta {
+    padding: 12px 14px;
+    border-top: 1px solid #DDD;
+}
+
+.upgrade-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    background: #F6EEDF;
+    color: #805C1F;
+    border: 1px solid #805C1F;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.upgrade-btn:hover {
+    background: #805C1F;
+    color: #F6EEDF;
+}
+
+.upgrade-meta {
+    font-size: 12px;
+    color: #212121;
+    text-align: center;
+    margin-top: 6px;
+}
+
+
 /* Common Admin Styles Ended */
 
 span.jobwp-admin-icon {
     color: #8fa5e0;
     cursor: pointer;
+    display: inline-block !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 26px;
 }
 
 span.jobwp-admin-icon:hover {
@@ -274,6 +510,8 @@ img.jobwp-admin-help-img {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    border: 1px solid #DDD;
+    box-shadow: 0.3em 0.3em 1em #DDD;
 }
 
 #jobwp-download-to-csv-form {

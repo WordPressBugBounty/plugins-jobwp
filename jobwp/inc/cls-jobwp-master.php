@@ -4,6 +4,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 require_once JOBWP_PATH . 'core/core.php';
+include_once JOBWP_PATH . 'inc/cls-hm-currency.php';
 include_once JOBWP_PATH . 'core/general-settings.php';
 include_once JOBWP_PATH . 'core/listing-content.php';
 include_once JOBWP_PATH . 'core/listing-styles.php';
@@ -84,6 +85,8 @@ class JobWp_Master {
             JOBWP_PRFX . 'single_template',
             10
         );
+        //$this->jobwp_loader->add_filter('the_content', $jobwp_front, 'jobwp_single_template_only_content', 10);
+        //$this->jobwp_loader->add_filter('wp_head', $jobwp_front, 'jobwp_add_ld_json', -1);
         $jobwp_front->jobwp_load_shortcode();
     }
 

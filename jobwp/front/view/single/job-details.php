@@ -122,28 +122,23 @@ foreach ( $single_items as $sItem ) {
     }
     if ( 'JobNature' === $sItem ) {
         if ( !$jobwp_single_hide_job_type ) {
-            ?>
-                <div class="content-row">
-                    <div class="left-cell">
-                        <h5 class="label"><?php 
-            esc_html_e( $jobwp_single_job_type_text );
-            ?></h5>
-                    </div>
-                    <div class="right-cell text">
-                        <?php 
-            // Job Nature
             if ( !empty( $jobs_nature ) ) {
-                $jobs_nature_arr = array();
-                foreach ( $jobs_nature as $nature ) {
-                    $jobs_nature_arr[] = $nature->name . '';
-                }
-                echo implode( ', ', $jobs_nature_arr );
-            }
-            ?>
+                ?>
+                    <div class="content-row">
+                        <div class="left-cell">
+                            <h5 class="label"><?php 
+                esc_html_e( $jobwp_single_job_type_text );
+                ?></h5>
+                        </div>
+                        <div class="right-cell text">
+                            <?php 
+                esc_html_e( $employmentType );
+                ?>
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
                 <?php 
+            }
         }
     }
     if ( 'EducationalRequirements' === $sItem ) {
@@ -192,24 +187,24 @@ foreach ( $single_items as $sItem ) {
         if ( !$jobwp_single_hide_loc ) {
             if ( !empty( $jobs_location ) ) {
                 ?>
-                <div class="content-row">
-                    <div class="left-cell">
-                        <h5 class="label"><?php 
+                    <div class="content-row">
+                        <div class="left-cell">
+                            <h5 class="label"><?php 
                 esc_html_e( $jobwp_single_loc_text );
                 ?></h5>
-                    </div>
-                    <div class="right-cell text">
-                        <?php 
+                        </div>
+                        <div class="right-cell text">
+                            <?php 
                 $jobs_location_arr = array();
                 foreach ( $jobs_location as $location ) {
                     $jobs_location_arr[] = $location->name . '';
                 }
                 echo implode( ', ', $jobs_location_arr );
                 ?>
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
-                <?php 
+                    <?php 
             }
         }
     }

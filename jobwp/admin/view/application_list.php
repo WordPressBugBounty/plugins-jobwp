@@ -103,9 +103,6 @@ print_column_headers( 'jobwp-allication-table-column', false );
     <a href="<?php 
 echo job_fs()->get_upgrade_url();
 ?>" class="button button-primary jobwp-button"><?php 
-_e( 'Export to CSV/Excel Available in Professional', 'jobwp' );
-?></a><br>
-    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Export Available in Professional', 'jobwp' ) . '</a>';
-?></span>
+_e( 'Export to CSV, Excel Available in Professional', 'jobwp' );
+?></a>
     

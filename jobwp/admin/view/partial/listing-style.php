@@ -14,56 +14,31 @@ foreach ( $jobwpListingStyles as $option_name => $option_value ) {
 <?php 
 wp_nonce_field( 'jobwp_listing_styles_action', 'jobwp_listing_styles_nonce' );
 ?>
-    <table class="jobwp-listing-style-settings-table">
-        <!-- Job Item -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
-_e( 'Job Item', 'jobwp' );
-?></span><hr>
-            </th>
+    <table class="hm-settings-table jobwp-listing-style-settings-table" cellpadding="0" cellspacing="0">
+        <!-- Job Card Items -->
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-rectangle-list"></i>&nbsp;<?php 
+_e( 'Job Card Items', 'jobwp' );
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Background Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+echo '<tr><td colspan="6" style="padding:0;"></td></tr>';
+$jobwp_upgrade_arr = [
+    'label'   => 'Background Color & Border Color',
+    'icon'    => 'fa-solid fa-palette',
+    'message' => "Available in Professional",
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
-        <!-- Title -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <!-- Job Title -->
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-list"></i>&nbsp;<?php 
 _e( 'Job Title', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php 
+                <label><i class="fa-solid fa-check"></i>&nbsp;<?php 
 _e( 'Font Color', 'jobwp' );
 ?>:</label>
             </th>
@@ -74,7 +49,7 @@ esc_attr_e( $jobwp_listing_title_font_color );
                 <div id="colorpicker"></div>
             </td>
             <th scope="row">
-                <label><?php 
+                <label><i class="fa-solid fa-check"></i>&nbsp;<?php 
 _e( 'Font Size', 'jobwp' );
 ?>:</label>
             </th>
@@ -85,69 +60,41 @@ esc_attr_e( $jobwp_listing_title_font_size );
                 <code>px</code>
             </td>
             <th scope="row">
-                <label><?php 
+                <label><i class="fa-solid fa-check"></i>&nbsp;<?php 
 _e( 'Hover Font Color', 'jobwp' );
 ?>:</label>
             </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
+            <td colspan="5">
+                <input class="jobwp-wp-color" type="text" name="jobwp_listing_title_font_color_hvr" id="jobwp_listing_title_font_color_hvr" value="<?php 
+esc_attr_e( $jobwp_listing_title_font_color_hvr );
+?>">
+                <div id="colorpicker"></div>
             </td>
         </tr>
         <!-- Company -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-clipboard-list"></i>&nbsp;<?php 
 _e( 'Company', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+echo '<tr><td colspan="6" style="padding:0;"></td></tr>';
+$jobwp_upgrade_arr = [
+    'label'   => 'Font Color & Font Size',
+    'icon'    => 'fa-solid fa-palette',
+    'message' => "Available in Professional",
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
         <!-- Overview -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-rectangle-list"></i>&nbsp;<?php 
 _e( 'Job Overview', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php 
+                <label><i class="fa-solid fa-check"></i>&nbsp;<?php 
 _e( 'Font Color', 'jobwp' );
 ?>:</label>
             </th>
@@ -158,11 +105,11 @@ esc_attr_e( $jobwp_listing_overview_font_color );
                 <div id="colorpicker"></div>
             </td>
             <th scope="row">
-                <label><?php 
+                <label><i class="fa-solid fa-check"></i>&nbsp;<?php 
 _e( 'Font Size', 'jobwp' );
 ?>:</label>
             </th>
-            <td>
+            <td colspan="3">
                 <input type="number" class="small-text" min="11" max="50" name="jobwp_listing_overview_font_size" id="jobwp_listing_overview_font_size" value="<?php 
 esc_attr_e( $jobwp_listing_overview_font_size );
 ?>">
@@ -170,319 +117,50 @@ esc_attr_e( $jobwp_listing_overview_font_size );
             </td>
         </tr>
         <!-- Job Info -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-toggle-off"></i>&nbsp;<?php 
 _e( 'Job Information Label', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+echo '<tr><td colspan="6" style="padding:0;"></td></tr>';
+$jobwp_upgrade_arr = [
+    'label'   => 'Font Color & Font Size',
+    'icon'    => 'fa-solid fa-palette',
+    'message' => "Available in Professional",
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-            <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
         <!-- Read More Button -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-angles-right"></i>&nbsp;<?php 
 _e( 'Read More Button', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Background Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+echo '<tr><td colspan="6" style="padding:0;"></td></tr>';
+$jobwp_upgrade_arr = [
+    'label'   => 'Full control over button colors, fonts, borders, hover states, and padding',
+    'icon'    => 'fa-solid fa-palette',
+    'message' => "Available in Professional",
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-            <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Width', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-            <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Radius', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-            <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Padding', 'jobwp' );
-?>:</label>
-            </th>
-            <td colspan="5">
-            <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
-        <!-- Read More Button : Hover -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
-_e( 'Read More Button : Hover', 'jobwp' );
-?></span><hr>
-            </th>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Background Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
         <!-- Pagination -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-ellipsis"></i>&nbsp;<?php 
 _e( 'Pagination', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Background  Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+echo '<tr><td colspan="6" style="padding:0;"></td></tr>';
+$jobwp_upgrade_arr = [
+    'label'   => 'Full control over pagination colors, fonts, borders, hover states etc.',
+    'icon'    => 'fa-solid fa-palette',
+    'message' => "Available in Professional",
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-            <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Radius', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-            <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Hover Background Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Hover Font Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-					<span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-					<?php 
-?>
-            </td>
-        </tr>
     </table>
     <hr>
     <p class="submit"><button id="updateListingStyles" name="updateListingStyles" class="button button-primary jobwp-button"><?php 

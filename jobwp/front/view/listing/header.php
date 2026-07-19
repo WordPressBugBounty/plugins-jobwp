@@ -64,15 +64,12 @@ $jobwpQueryArrParams = array(
     'posts_per_page' => $jobwp_limit,
     'paged'          => $jobwp_paged,
     'meta_query'     => array(
-        'relation' => 'AND',
+        //'relation' => 'AND',
         array(
             'key'     => 'jobwp_status',
             'value'   => 'active',
             'compare' => '=',
         ),
-    ),
-    'tax_query'      => array(
-        'relation' => 'AND',
     ),
 );
 // If Category params found in shortcode

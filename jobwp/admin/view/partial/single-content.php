@@ -17,79 +17,67 @@ $single_items = $this->get_single_items_order();
 <?php 
 wp_nonce_field( 'jobwp_single_content_action', 'jobwp_single_content_nonce' );
 ?>
-    <table class="jobwp-single-settings-table" id="jobwp-single-content-settings-table">
-        <tr class="jobwp_single_layout">
-            <th scope="row">
-                <label><?php 
-_e( 'Details Page Layout', 'jobwp' );
-?></label>
-            </th>
-            <td>
-                <?php 
+    <table class="hm-settings-table jobwp-single-settings-table" id="jobwp-single-content-settings-table" cellpadding="0" cellspacing="0">
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Details Page Layout',
+    'icon'    => 'fa-solid fa-grip',
+    'message' => "Display your job details page in Horizontal or Vertical layout.",
+    'colspan' => 3,
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
         <tr class="jobwp_single_title_tag">
             <th scope="row">
                 <label for="jobwp_single_title_tag"><?php 
 _e( 'Job Title Tag', 'jobwp' );
-?>:</label>
+?></label>
             </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
+            <td colspan="3">
+                <select name="jobwp_single_title_tag">
+                    <option value="h1" <?php 
+echo ( 'h1' == $jobwp_single_title_tag ? 'selected' : '' );
+?>>h1</option>
+                    <option value="h2" <?php 
+echo ( 'h2' == $jobwp_single_title_tag ? 'selected' : '' );
+?>>h2</option>
+                    <option value="h3" <?php 
+echo ( 'h3' == $jobwp_single_title_tag ? 'selected' : '' );
+?>>h3</option>
+                    <option value="h4" <?php 
+echo ( 'h4' == $jobwp_single_title_tag ? 'selected' : '' );
+?>>h4</option>
+                    <option value="h5" <?php 
+echo ( 'h5' == $jobwp_single_title_tag ? 'selected' : '' );
+?>>h5</option>
+                    <option value="h6" <?php 
+echo ( 'h6' == $jobwp_single_title_tag ? 'selected' : '' );
+?>>h6</option>
+                </select>
             </td>
         </tr>
-        <tr class="jobwp_single_display_company_name">
-            <th scope="row">
-                <label for="jobwp_single_display_company_name"><?php 
-_e( 'Display Company Name', 'jobwp' );
-?>?</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Display company name & logo',
+    'icon'    => 'fa-regular fa-address-card',
+    'message' => "Show the hiring company's name and logo on the details page — essential for recruitment agencies posting jobs on behalf of multiple clients.",
+    'colspan' => 3,
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
+        <!-- Job Information -->
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-rectangle-list"></i>&nbsp;<?php 
+_e( 'Job Information', 'jobwp' );
+?></td>
         </tr>
-        <tr class="jobwp_single_display_company_logo">
-            <th scope="row">
-                <label for="jobwp_single_display_company_logo"><?php 
-_e( 'Display Company Logo', 'jobwp' );
-?>?</label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
-        <tr><td colspan="4"><hr></td></tr>
         <?php 
 foreach ( $single_items as $sItem ) {
     if ( 'Overview' === $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Overview">
                     <th scope="row">
-                        <label for="jobwp_single_hide_overview"><?php 
+                        <label><?php 
         _e( 'Hide Overview', 'jobwp' );
         ?>?</label>
                     </th>
@@ -98,6 +86,9 @@ foreach ( $single_items as $sItem ) {
                             <?php 
         echo ( $jobwp_single_hide_overview ? 'checked' : '' );
         ?>>
+                        <label for="jobwp_single_hide_overview"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -116,7 +107,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_NoOfVacancies">
                     <th scope="row">
-                        <label for="jobwp_single_hide_vacancies"><?php 
+                        <label><?php 
         _e( 'Hide No. of Vacancies', 'jobwp' );
         ?>?</label>
                     </th>
@@ -124,7 +115,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_vacancies" class="jobwp_single_hide_vacancies" id="jobwp_single_hide_vacancies"
                             <?php 
         echo ( $jobwp_single_hide_vacancies ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_vacancies"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -143,7 +137,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Skills">
                     <th scope="row">
-                        <label for="jobwp_single_hide_skills"><?php 
+                        <label><?php 
         _e( 'Hide Specific Skills', 'jobwp' );
         ?>?</label>
                     </th>
@@ -151,7 +145,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_skills" class="jobwp_single_hide_skills" id="jobwp_single_hide_skills"
                             <?php 
         echo ( $jobwp_single_hide_skills ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_skills"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -170,7 +167,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_ResponsibleFor">
                     <th scope="row">
-                        <label for="jobwp_single_hide_responsible"><?php 
+                        <label><?php 
         _e( 'Hide Responsible For', 'jobwp' );
         ?>?</label>
                     </th>
@@ -178,7 +175,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_responsible" class="jobwp_single_hide_responsible" id="jobwp_single_hide_responsible"
                             <?php 
         echo ( $jobwp_single_hide_responsible ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_responsible"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -197,7 +197,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_AdditionalRequirements">
                     <th scope="row">
-                        <label for="jobwp_single_hide_requirements"><?php 
+                        <label><?php 
         _e( 'Hide Additional Requirements', 'jobwp' );
         ?>?</label>
                     </th>
@@ -205,7 +205,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_requirements" class="jobwp_single_hide_requirements" id="jobwp_single_hide_requirements"
                             <?php 
         echo ( $jobwp_single_hide_requirements ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_requirements"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -224,7 +227,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_JobNature">
                     <th scope="row">
-                        <label for="jobwp_single_hide_job_type"><?php 
+                        <label><?php 
         _e( 'Hide Job Nature', 'jobwp' );
         ?>?</label>
                     </th>
@@ -232,7 +235,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_job_type" class="jobwp_single_hide_job_type" id="jobwp_single_hide_job_type"
                             <?php 
         echo ( $jobwp_single_hide_job_type ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_job_type"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -251,7 +257,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_EducationalRequirements">
                     <th scope="row">
-                        <label for="jobwp_single_hide_education"><?php 
+                        <label><?php 
         _e( 'Hide Educational Requirements', 'jobwp' );
         ?>?</label>
                     </th>
@@ -259,7 +265,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_education" class="jobwp_single_hide_education" id="jobwp_single_hide_education"
                             <?php 
         echo ( $jobwp_single_hide_education ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_education"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -278,7 +287,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_ExperienceRequirements">
                     <th scope="row">
-                        <label for="jobwp_single_hide_experience"><?php 
+                        <label><?php 
         _e( 'Hide Experience Requirements', 'jobwp' );
         ?>?</label>
                     </th>
@@ -286,7 +295,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_experience" class="jobwp_single_hide_experience" id="jobwp_single_hide_experience"
                             <?php 
         echo ( $jobwp_single_hide_experience ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_experience"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -305,7 +317,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Location">
                     <th scope="row">
-                        <label for="jobwp_single_hide_loc"><?php 
+                        <label><?php 
         _e( 'Hide Job Location', 'jobwp' );
         ?>?</label>
                     </th>
@@ -313,7 +325,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_loc" class="jobwp_single_hide_loc" id="jobwp_single_hide_loc"
                             <?php 
         echo ( $jobwp_single_hide_loc ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_loc"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -332,7 +347,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Salary">
                     <th scope="row">
-                        <label for="jobwp_single_hide_salary"><?php 
+                        <label><?php 
         _e( 'Hide Salary', 'jobwp' );
         ?>?</label>
                     </th>
@@ -340,7 +355,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_salary" class="jobwp_single_hide_salary" id="jobwp_single_hide_salary"
                             <?php 
         echo ( $jobwp_single_hide_salary ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_salary"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -359,7 +377,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Benefits">
                     <th scope="row">
-                        <label for="jobwp_single_hide_benefit"><?php 
+                        <label><?php 
         _e( 'Hide Other Benefits', 'jobwp' );
         ?>?</label>
                     </th>
@@ -367,7 +385,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_benefit" class="jobwp_single_hide_benefit" id="jobwp_single_hide_benefit"
                             <?php 
         echo ( $jobwp_single_hide_benefit ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_benefit"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -386,7 +407,7 @@ foreach ( $single_items as $sItem ) {
         ?>
                 <tr class="jobwp_single_item" id="jobwp_single_sort_item_Level">
                     <th scope="row">
-                        <label for="jobwp_single_hide_level"><?php 
+                        <label><?php 
         _e( 'Hide Job Level', 'jobwp' );
         ?>?</label>
                     </th>
@@ -394,7 +415,10 @@ foreach ( $single_items as $sItem ) {
                         <input type="checkbox" name="jobwp_single_hide_level" class="jobwp_single_hide_level" id="jobwp_single_hide_level"
                             <?php 
         echo ( $jobwp_single_hide_level ? 'checked' : '' );
-        ?> >
+        ?>>
+                        <label for="jobwp_single_hide_level"><?php 
+        _e( 'Enable', 'jobwp' );
+        ?></label>
                     </td>
                     <th scope="row">
                         <label><?php 
@@ -411,11 +435,16 @@ foreach ( $single_items as $sItem ) {
     }
 }
 ?>
-        <tr><td colspan="4"><hr></td></tr>
+        <!-- Apply Procedure -->
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-file-lines"></i>&nbsp;<?php 
+_e( 'Apply Procedure', 'jobwp' );
+?></td>
+        </tr>
         <!-- Hide Apply Procedure -->
         <tr>
             <th scope="row">
-                <label for="jobwp_hide_apply_procedure"><?php 
+                <label><?php 
 _e( 'Hide Apply Procedure', 'jobwp' );
 ?>?</label>
             </th>
@@ -423,7 +452,10 @@ _e( 'Hide Apply Procedure', 'jobwp' );
                 <input type="checkbox" name="jobwp_hide_apply_procedure" class="jobwp_hide_apply_procedure" id="jobwp_hide_apply_procedure"
                     <?php 
 echo ( $jobwp_hide_apply_procedure ? 'checked' : '' );
-?> >
+?>>
+                <label for="jobwp_hide_apply_procedure"><?php 
+_e( 'Enable', 'jobwp' );
+?></label>
             </td>
             <th scope="row">
                 <label><?php 
@@ -438,21 +470,22 @@ esc_attr_e( $jobwp_apply_procedure_title );
         </tr>
         <!-- Apply Procedure Content -->
         <tr class="jobwp_apply_procedure_content">
-            <th colspan="3" scope="row" style="text-align: right;">
+            <th scope="row">
                 <label><?php 
 _e( 'Apply Procedure Content', 'jobwp' );
 ?></label>
             </th>
-            <td colspan="1">
-                <textarea cols="40" style="min-height:100px;" name="jobwp_apply_procedure_content" class="regular-text" id="jobwp_apply_procedure_content"><?php 
-esc_html_e( $jobwp_apply_procedure_content );
+            <td colspan="3">
+                <textarea cols="40" style="min-height:100px;" name="jobwp_apply_procedure_content" class="large-text" 
+                    id="jobwp_apply_procedure_content"><?php 
+echo esc_textarea( $jobwp_apply_procedure_content );
 ?></textarea>
             </td>
         </tr>
         <!-- Hide Apply Button -->
         <tr>
             <th scope="row">
-                <label for="jobwp_hide_apply_button"><?php 
+                <label><?php 
 _e( 'Hide Apply Button', 'jobwp' );
 ?>?</label>
             </th>
@@ -460,7 +493,10 @@ _e( 'Hide Apply Button', 'jobwp' );
                 <input type="checkbox" name="jobwp_hide_apply_button" class="jobwp_hide_apply_button" id="jobwp_hide_apply_button"
                     <?php 
 echo ( $jobwp_hide_apply_button ? 'checked' : '' );
-?> >
+?>>
+                <label for="jobwp_hide_apply_button"><?php 
+_e( 'Enable', 'jobwp' );
+?></label>
             </td>
             <th scope="row">
                 <label><?php 
@@ -474,36 +510,15 @@ esc_attr_e( $jobwp_apply_button_text );
             </td>
         </tr>
         <!-- Hide Share On -->
-        <tr>
-            <th scope="row">
-                <label for="jobwp_hide_share_on"><?php 
-_e( 'Hide Share On', 'jobwp' );
-?>?</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Hide Social Share',
+    'icon'    => 'fa-brands fa-facebook',
+    'message' => "Control the ability to share your jobs in various social platforms.",
+    'colspan' => 3,
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label for="jobwp_hide_share_on"><?php 
-_e( 'Label Text', 'jobwp' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
     </table>
     <hr>
     <p class="submit">

@@ -36,6 +36,8 @@ if ( '' !== $jobwp_location_s ) {
         'terms'    => urldecode( $jobwp_location_s ),
     );
 }
+//echo '<pre>';
+//print_r($jobwpQueryArrParams);
 $jobwp_categories = get_terms( array(
     'taxonomy'   => 'jobs_category',
     'hide_empty' => true,
@@ -185,7 +187,7 @@ esc_attr_e( $jobwp_search_button_txt );
         <div class="jobwp-search-item">
             <a href="<?php 
 echo get_permalink( $post->ID );
-?>" class="fa fa-refresh" id="jobwp-search-refresh"></a>
+?>" id="jobwp-search-refresh"><i class="fa fa-refresh"></i></a>
         </div>
     
     </div>

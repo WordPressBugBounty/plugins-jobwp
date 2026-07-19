@@ -4,10 +4,10 @@
  * Plugin Name:         JobWP
  * Plugin URI:		    https://wordpress.org/plugins/jobwp/
  * Description: 	    Display job listings in a career page and allow users to apply directly to your site.
- * Version:             2.4.8
+ * Version:             2.5.0
  * Author:		        HM Plugin
  * Author URI:	        https://hmplugin.com
- * Tested up to:        6.9.4
+ * Tested up to:        7.0.1
  * Requires at least:   5.8
  * Requires PHP:        7.4
  * Text Domain:         jobwp
@@ -28,7 +28,7 @@ if ( function_exists( 'job_fs' ) ) {
         define( 'JOBWP_PRFX', 'jobwp_' );
         define( 'JOBWP_CLS_PRFX', 'cls-jobwp-' );
         define( 'JOBWP_TXT_DOMAIN', 'jobwp' );
-        define( 'JOBWP_VERSION', '2.4.8' );
+        define( 'JOBWP_VERSION', '2.5.0' );
         require_once JOBWP_PATH . '/lib/freemius-integrator.php';
         require_once JOBWP_PATH . 'inc/' . JOBWP_CLS_PRFX . 'master.php';
         $jobwp = new JobWp_Master();
@@ -50,6 +50,10 @@ if ( function_exists( 'job_fs' ) ) {
             }
         }
 
+        // Loading extra fields in job location taxonomy
+        // Specially for Google structure data
+        include 'location-extra-field.php';
+        //===============================================
         // Add a books gallery slug option in permalink setting
         add_action( 'admin_init', function () {
             add_settings_field(
@@ -62,19 +66,27 @@ if ( function_exists( 'job_fs' ) ) {
         } );
         // Setting output
         function jobwp_cpt_slug_output() {
+            wp_nonce_field( 'jobwp_cpt_slug_permalink_action', 'jobwp_cpt_slug_permalink_nonce' );
             ?>
-            <input name="jobwp_cpt_slug" type="text" class="regular-text code" value="<?php 
+            <input type="text" name="jobwp_cpt_slug" value="<?php 
             esc_attr_e( get_option( 'jobwp_cpt_slug' ) );
             ?>" placeholder="<?php 
             echo 'jobs';
-            ?>" />
+            ?>" class="regular-text code" />
             <?php 
         }
 
         // Save setting
         add_action( 'admin_init', function () {
-            if ( isset( $_POST['permalink_structure'] ) ) {
-                update_option( 'jobwp_cpt_slug', trim( sanitize_text_field( $_POST['jobwp_cpt_slug'] ) ) );
+            if ( isset( $_POST['permalink_structure'] ) && current_user_can( 'manage_options' ) ) {
+                if ( isset( $_POST['_wp_http_referer'] ) && strpos( $_POST['_wp_http_referer'], 'options-permalink.php' ) !== false ) {
+                    // Checking the nonce exists and is valid
+                    if ( !isset( $_POST['jobwp_cpt_slug_permalink_nonce'] ) || !wp_verify_nonce( $_POST['jobwp_cpt_slug_permalink_nonce'], 'jobwp_cpt_slug_permalink_action' ) ) {
+                        wp_die( 'Security check failed' );
+                    } else {
+                        update_option( 'jobwp_cpt_slug', trim( sanitize_text_field( $_POST['jobwp_cpt_slug'] ) ) );
+                    }
+                }
             }
         } );
         /*

@@ -9,6 +9,7 @@ if ( !defined( 'ABSPATH' ) ) {
 class JobWp_Admin {
     use 
         Jobwp_Core,
+        JobWP_Currency,
         JobwpGeneralSettings,
         Jobwp_Listing_Content_Settings,
         Jobwp_Listing_Styles_Settings,
@@ -156,7 +157,6 @@ class JobWp_Admin {
                 $jobwpGeneralMessage = $this->jobwp_set_general_settings( $_POST );
             }
         }
-        $jobwpGeneralSettings = $this->jobwp_get_general_settings();
         require_once JOBWP_PATH . 'admin/view/general.php';
     }
 
@@ -571,6 +571,10 @@ class JobWp_Admin {
         $jobwp_application_url = get_post_meta( $post->ID, 'jobwp_application_url', true );
         $jobwp_company = get_post_meta( $post->ID, 'jobwp_company', true );
         $jobwp_is_featured_job = get_post_meta( $post->ID, 'jobwp_is_featured_job', true );
+        $jobwp_base_salary_min = get_post_meta( $post->ID, 'jobwp_base_salary_min', true );
+        $jobwp_base_salary_max = get_post_meta( $post->ID, 'jobwp_base_salary_max', true );
+        $jobwp_base_salary_currency = get_post_meta( $post->ID, 'jobwp_base_salary_currency', true );
+        $jobwp_base_salary_time = get_post_meta( $post->ID, 'jobwp_base_salary_time', true );
         include_once JOBWP_PATH . 'admin/view/partial/job-info.php';
     }
 
@@ -658,22 +662,26 @@ class JobWp_Admin {
             return $post_id;
         }
         $jobwp_meta_params = array(
-            'jobwp_experience'       => ( isset( $_POST['jobwp_experience'] ) ? sanitize_text_field( $_POST['jobwp_experience'] ) : null ),
-            'jobwp_vacancies'        => ( isset( $_POST['jobwp_vacancies'] ) ? sanitize_text_field( $_POST['jobwp_vacancies'] ) : null ),
-            'jobwp_nature'           => ( isset( $_POST['jobwp_nature'] ) ? sanitize_text_field( $_POST['jobwp_nature'] ) : null ),
-            'jobwp_level'            => ( isset( $_POST['jobwp_level'] ) ? sanitize_text_field( $_POST['jobwp_level'] ) : null ),
-            'jobwp_location'         => ( isset( $_POST['jobwp_location'] ) ? sanitize_text_field( $_POST['jobwp_location'] ) : null ),
-            'jobwp_edu_req'          => ( isset( $_POST['jobwp_edu_req'] ) ? wp_kses_post( $_POST['jobwp_edu_req'] ) : null ),
-            'jobwp_deadline'         => ( isset( $_POST['jobwp_deadline'] ) ? sanitize_text_field( $_POST['jobwp_deadline'] ) : null ),
-            'jobwp_status'           => ( isset( $_POST['jobwp_status'] ) ? sanitize_text_field( $_POST['jobwp_status'] ) : null ),
-            'jobwp_responsibilities' => ( isset( $_POST['jobwp_responsibilities'] ) ? wp_kses_post( $_POST['jobwp_responsibilities'] ) : null ),
-            'jobwp_skills'           => ( isset( $_POST['jobwp_skills'] ) ? wp_kses_post( $_POST['jobwp_skills'] ) : null ),
-            'jobwp_add_req'          => ( isset( $_POST['jobwp_add_req'] ) ? wp_kses_post( $_POST['jobwp_add_req'] ) : null ),
-            'jobwp_salary'           => ( isset( $_POST['jobwp_salary'] ) ? wp_kses_post( $_POST['jobwp_salary'] ) : null ),
-            'jobwp_other_benefits'   => ( isset( $_POST['jobwp_other_benefits'] ) ? wp_kses_post( $_POST['jobwp_other_benefits'] ) : null ),
-            'jobwp_application_url'  => ( isset( $_POST['jobwp_application_url'] ) ? sanitize_url( $_POST['jobwp_application_url'] ) : '' ),
-            'jobwp_company'          => ( isset( $_POST['jobwp_company'] ) ? sanitize_text_field( $_POST['jobwp_company'] ) : null ),
-            'jobwp_is_featured_job'  => ( isset( $_POST['jobwp_is_featured_job'] ) ? sanitize_text_field( $_POST['jobwp_is_featured_job'] ) : null ),
+            'jobwp_experience'           => ( isset( $_POST['jobwp_experience'] ) ? sanitize_text_field( $_POST['jobwp_experience'] ) : null ),
+            'jobwp_vacancies'            => ( isset( $_POST['jobwp_vacancies'] ) ? sanitize_text_field( $_POST['jobwp_vacancies'] ) : null ),
+            'jobwp_nature'               => ( isset( $_POST['jobwp_nature'] ) ? sanitize_text_field( $_POST['jobwp_nature'] ) : null ),
+            'jobwp_level'                => ( isset( $_POST['jobwp_level'] ) ? sanitize_text_field( $_POST['jobwp_level'] ) : null ),
+            'jobwp_location'             => ( isset( $_POST['jobwp_location'] ) ? sanitize_text_field( $_POST['jobwp_location'] ) : null ),
+            'jobwp_edu_req'              => ( isset( $_POST['jobwp_edu_req'] ) ? wp_kses_post( $_POST['jobwp_edu_req'] ) : null ),
+            'jobwp_deadline'             => ( isset( $_POST['jobwp_deadline'] ) ? sanitize_text_field( $_POST['jobwp_deadline'] ) : null ),
+            'jobwp_status'               => ( isset( $_POST['jobwp_status'] ) ? sanitize_text_field( $_POST['jobwp_status'] ) : null ),
+            'jobwp_responsibilities'     => ( isset( $_POST['jobwp_responsibilities'] ) ? wp_kses_post( $_POST['jobwp_responsibilities'] ) : null ),
+            'jobwp_skills'               => ( isset( $_POST['jobwp_skills'] ) ? wp_kses_post( $_POST['jobwp_skills'] ) : null ),
+            'jobwp_add_req'              => ( isset( $_POST['jobwp_add_req'] ) ? wp_kses_post( $_POST['jobwp_add_req'] ) : null ),
+            'jobwp_salary'               => ( isset( $_POST['jobwp_salary'] ) ? wp_kses_post( $_POST['jobwp_salary'] ) : null ),
+            'jobwp_other_benefits'       => ( isset( $_POST['jobwp_other_benefits'] ) ? wp_kses_post( $_POST['jobwp_other_benefits'] ) : null ),
+            'jobwp_application_url'      => ( isset( $_POST['jobwp_application_url'] ) ? sanitize_url( $_POST['jobwp_application_url'] ) : '' ),
+            'jobwp_company'              => ( isset( $_POST['jobwp_company'] ) ? sanitize_text_field( $_POST['jobwp_company'] ) : null ),
+            'jobwp_is_featured_job'      => ( isset( $_POST['jobwp_is_featured_job'] ) ? sanitize_text_field( $_POST['jobwp_is_featured_job'] ) : null ),
+            'jobwp_base_salary_min'      => ( isset( $_POST['jobwp_base_salary_min'] ) ? sanitize_text_field( $_POST['jobwp_base_salary_min'] ) : null ),
+            'jobwp_base_salary_max'      => ( isset( $_POST['jobwp_base_salary_max'] ) ? sanitize_text_field( $_POST['jobwp_base_salary_max'] ) : null ),
+            'jobwp_base_salary_currency' => ( isset( $_POST['jobwp_base_salary_currency'] ) ? sanitize_text_field( $_POST['jobwp_base_salary_currency'] ) : null ),
+            'jobwp_base_salary_time'     => ( isset( $_POST['jobwp_base_salary_time'] ) ? sanitize_text_field( $_POST['jobwp_base_salary_time'] ) : null ),
         );
         foreach ( $jobwp_meta_params as $key => $value ) {
             if ( 'revision' === $post->post_type ) {
@@ -751,6 +759,10 @@ class JobWp_Admin {
         if ( !current_user_can( 'manage_options' ) ) {
             return;
         }
+        if ( !isset( $_POST['jobwp_download_csv'] ) ) {
+            return;
+        }
+        check_admin_referer( 'jobwp_download_csv_action', 'jobwp_csv_nonce' );
     }
 
     /**
@@ -759,31 +771,24 @@ class JobWp_Admin {
     function jobwp_job_company_add_form_fields( $taxonomy ) {
         ?>
 		<div class="form-field term-group">
-
 			<label for="jobwp_company_email"><?php 
         _e( 'Company Email', 'jobwp' );
         ?></label>
 			<input type="text" id="jobwp_company_email" name="jobwp_company_email" class="jobwp_company_email">
-
 		</div>
 		<div class="form-field term-group">
-
 			<label for="jobwp_company_web"><?php 
         _e( 'Company Website', 'jobwp' );
         ?></label>
 			<input type="text" id="jobwp_company_web" name="jobwp_company_web" class="jobwp_company_web">
-			
 		</div>
 		<div class="form-field term-group">
-
 			<label for="jobwp_company_addr"><?php 
         _e( 'Company Address', 'jobwp' );
         ?></label>
 			<input type="text" id="jobwp_company_addr" name="jobwp_company_addr" class="jobwp_company_addr">
-			
 		</div>
 		<div class="form-field term-group">
-
 			<label for="jobwp_company_logo_id"><?php 
         _e( 'Company Logo', 'jobwp' );
         ?></label>
@@ -799,7 +804,6 @@ class JobWp_Admin {
         _e( 'Remove Logo', 'jobwp' );
         ?>">
 			</p>
-
 		</div>
 		<?php 
     }
@@ -831,6 +835,47 @@ class JobWp_Admin {
         }
         update_option( 'jobwp_single_item_order_list', $new_list );
         die;
+    }
+
+    /**
+     * Upgrade to pro section in the settings page
+     */
+    function jobwp_upgrade_to_premium_section( $up_array ) {
+        $colspan = ( !empty( $up_array['colspan'] ) ? sanitize_text_field( $up_array['colspan'] ) : 1 );
+        ?>
+			<tr class="upgrade-promotion">
+				<th scope="row">
+					<label><i class="fa fa-lock" aria-hidden="true"></i><?php 
+        _e( $up_array['label'], 'jobwp' );
+        ?></label>
+				</th>
+				<td colspan="<?php 
+        echo esc_attr( $colspan );
+        ?>">
+					<div class="pro-unlock">
+						<i class="<?php 
+        echo esc_attr( $up_array['icon'] );
+        ?>" style="font-size:18px;flex-shrink:0" aria-hidden="true"></i>
+						<div class="pro-unlock-text">
+							<?php 
+        _e( $up_array['message'], 'jobwp' );
+        ?>
+						</div>
+						<?php 
+        echo '<a href="' . job_fs()->get_upgrade_url() . '" class="pro-unlock-btn">' . __( 'Unlock', 'jobwp' ) . '</a>';
+        ?>
+					</div>
+				</td>
+			</tr>
+			<?php 
+        return null;
+    }
+
+    /**
+     * Load admin sidebar
+     */
+    function jobwp_load_admin_sidebar( $pro_features_loc, $pro_features_global ) {
+        include_once 'view/sidebar.php';
     }
 
 }

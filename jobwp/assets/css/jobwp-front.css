@@ -13,7 +13,7 @@
     margin: 0 auto;
 }
 
-.jobwp-listing-body-container {
+.jobwp-listing-parent-wrapper .jobwp-listing-body-container {
     margin: 20px auto;
     border: 0px solid #000;
     width: 100%;
@@ -24,7 +24,7 @@
     color: #555555;
 }
 
-.jobwp-listing-top {
+.jobwp-listing-parent-wrapper .jobwp-listing-top {
     display: block;
     width: 100%;
     margin: 0 auto;
@@ -73,18 +73,21 @@
 
 /* Listing Started */
 
-.jobwp-item {
+.jobwp-listing-parent-wrapper .jobwp-item {
     padding: 10px 20px;
     background: #FFF;
     border: 1px solid #ddd;
     margin-bottom: 30px;
     display: inline-block;
     width: 100%;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    transition: .25s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .04);
+}
+
+.jobwp-listing-parent-wrapper .jobwp-item:hover {
+    transform: translateY(-5px);
+    border-color: #2271b1;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
 }
 
 .jobwp-item .jobwp-top {
@@ -127,6 +130,20 @@
     transition: all 0.2s ease-in-out;
 }
 */
+
+.jobwp-featured-image-container {
+    width: 100%;
+    height: 300px;
+    margin: 10px 0 20px 0;
+    overflow: hidden;
+}
+
+.jobwp-featured-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
 .jobwp-item .jobwp-job-title {
     margin-bottom: 5px;
@@ -208,6 +225,13 @@ div.jobwp-featured-meta i {
 
 .jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .jobwp-list-info-item .jobwp-list-bottom-item {
     margin-bottom: 0;
+    transition: .2s;
+}
+
+.jobwp-listing-body-container .jobwp-item .jobwp-list-info-wrapper .jobwp-list-info-item .jobwp-list-bottom-item:hover {
+    margin-bottom: 0;
+    transition: .2s;
+    padding-left: 8px;
 }
 
 
@@ -224,13 +248,14 @@ div.jobwp-featured-meta i {
 }
 
 .jobwp-listing-body-container.grid .jobwp-item .jobwp-top .jobwp-top-img {
+    width: fit-content;
     height: 80px;
-    margin-bottom: 10px;
 }
 
 .jobwp-listing-body-container.grid .jobwp-item .jobwp-top .jobwp-top-img img {
     height: 100%;
     width: auto;
+    display: block;
 }
 
 .jobwp-listing-body-container.grid .jobwp-item .jobwp-top .jobwp-top-left {
@@ -278,11 +303,10 @@ div.jobwp-featured-meta i {
 
 .jobwp-pagination {
     width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
+
+/*
 .jobwp-pagination .page-numbers li {
     display: inline-block;
     width: 50px;
@@ -326,6 +350,50 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     background: #13b5ea;
     color: #FFF;
 }
+*/
+
+div.jobwp-pagination ul.page-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+div.jobwp-pagination ul.page-numbers li {
+    margin: 0;
+}
+
+div.jobwp-pagination ul.page-numbers li a,
+div.jobwp-pagination ul.page-numbers li span {
+    min-width: 45px;
+    height: 45px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+}
+
+div.jobwp-pagination ul.page-numbers li a:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+div.jobwp-pagination ul.page-numbers li a.active,
+div.jobwp-pagination ul.page-numbers li span.current {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
 
 
 /* Pagination Ended */
@@ -333,7 +401,7 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
 
 /* Search Started */
 
-.jobwp-search-container {
+.jobwp-listing-parent-wrapper .jobwp-search-container {
     border: 1px solid #ddd;
     width: 100%;
     max-width: 1150px;
@@ -436,7 +504,7 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     margin: 40px auto;
 }
 
-.jobwp-single-area {
+.jobwp-single-body-container .jobwp-single-area {
     width: 100%;
     display: block;
 }
@@ -447,21 +515,21 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     padding: 0 20px;
 }
 
-.left-cell {
+.jobwp-single-body-container .left-cell {
     float: left;
     text-align: right;
     width: 30%;
     padding: 20px 20px 20px 0;
 }
 
-.right-cell {
+.jobwp-single-body-container .right-cell {
     float: right;
     width: 70%;
     padding: 20px 0 20px 30px;
     border-left: 1px solid #999;
 }
 
-.circulr-details-top {
+.jobwp-single-body-container .circulr-details-top {
     background: #eee;
     width: 100%;
     display: grid;
@@ -470,14 +538,14 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     padding: 10px 0;
 }
 
-.single-top-left,
-.single-top-right {
+.jobwp-single-body-container .single-top-left,
+.jobwp-single-body-container .single-top-right {
     padding: 20px 0;
-    text-align: center;
+    text-align: center !important;
 }
 
-.circulr-details-top .jobwp-job-title,
-.circulr-details-top .jwb-single-comp-name {
+.jobwp-single-body-container .circulr-details-top .jobwp-job-title,
+.jobwp-single-body-container .circulr-details-top .jwb-single-comp-name {
     font-size: 32px;
     line-height: 46px;
     text-align: left;
@@ -487,18 +555,19 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     width: 80%;
 }
 
-.circulr-details-top .jwb-single-comp-name {
+.jobwp-single-body-container .circulr-details-top .jwb-single-comp-name {
     font-size: 18px;
     margin-top: 10px;
     line-height: 28px;
 }
 
-.single-top-right img {
+.jobwp-single-body-container .single-top-right img {
     max-height: 100px;
     width: auto;
+    text-align: center !important;
 }
 
-.jobwp-single-area .content-row .left-cell h5.label {
+.jobwp-single-body-container .jobwp-single-area .content-row .left-cell h5.label {
     margin: 0;
     padding: 0;
     font-size: 18px;
@@ -521,7 +590,7 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     font-size: 36px;
 }
 
-.jobwp-primary-button {
+.jobwp-single-body-container .jobwp-primary-button {
     border-radius: 3px;
     font-size: 18px;
     text-transform: uppercase;
@@ -536,24 +605,24 @@ div.jobwp-pagination>ul.page-numbers>li>a.page-numbers:hover {
     background: none;
 }
 
-.circulr-details-bottom-email {
+.jobwp-single-body-container .circulr-details-bottom-email {
     background: #eeeeee;
     width: 100%;
     line-height: 10px;
-    padding: 20px 0;
+    padding: 20px 10px;
     display: block;
-    text-align: center;
+    text-align: center !important;
 }
 
-h3.wpsd-read-before-apply {
+.jobwp-single-body-container h3.wpsd-read-before-apply {
     font-size: 24px;
     padding: 0px;
     margin: 0;
     width: 100%;
-    text-align: center;
+    text-align: center !important;
 }
 
-span.wpsd-read-before-apply-border {
+.jobwp-single-body-container span.wpsd-read-before-apply-border {
     border-bottom: 3px solid #CCC;
     display: block;
     line-height: 10px;
@@ -561,11 +630,12 @@ span.wpsd-read-before-apply-border {
     margin: 0 auto;
 }
 
-.circulr-details-bottom-email p.apply-to-email {
+.jobwp-single-body-container .circulr-details-bottom-email p.apply-to-email {
     margin: 20px 0;
     padding: 0;
     font-size: 13px;
     line-height: 20px;
+    text-align: center !important;
 }
 
 .circulr-details-bottom-email p.apply-to-email a,
@@ -795,14 +865,14 @@ ul.jobwp-share-on li a.jobwp-share-on-link:hover {
     .jobwp-single-area {
         display: block;
     }
-    .jobwp-search-container {
+    .jobwp-listing-parent-wrapper .jobwp-search-container {
         display: inline-block;
         padding-bottom: 10px;
     }
-    .jobwp-search-container .jobwp-search-item {
+    .jobwp-listing-parent-wrapper .jobwp-search-container .jobwp-search-item {
         margin-bottom: 10px;
     }
-    .jobwp-search-container .jobwp-search-item a#jobwp-search-refresh {
+    .jobwp-listing-parent-wrapper .jobwp-search-container .jobwp-search-item a#jobwp-search-refresh {
         margin: auto;
     }
     .jobwp-listing-body-container.grid {

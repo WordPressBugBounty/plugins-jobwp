@@ -14,14 +14,12 @@ foreach ( $jobwpSearchStyles as $option_name => $option_value ) {
 <?php 
 wp_nonce_field( 'jobwp_search_style_action', 'jobwp_search_style_nonce' );
 ?>
-    <table class="jobwp-settings-table">
+    <table class="hm-settings-table jobwp-settings-table" cellpadding="0" cellspacing="0">
         <!-- Search Container -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
-_e( 'Container', 'jobwp' );
-?></span><hr>
-            </th>
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-regular fa-square"></i>&nbsp;<?php 
+_e( 'Search Container', 'jobwp' );
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -40,20 +38,18 @@ esc_attr_e( $jobwp_search_container_bg_color );
 _e( 'Border Color', 'jobwp' );
 ?>:</label>
             </th>
-            <td>
+            <td colspan="3">
                 <input class="jobwp-wp-color" type="text" name="jobwp_search_container_border_color" id="jobwp_search_container_border_color" value="<?php 
 esc_attr_e( $jobwp_search_container_border_color );
 ?>">
                 <div id="colorpicker"></div>
             </td>
         </tr>
-        <!-- Search Items -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
-_e( 'Search Items', 'jobwp' );
-?></span><hr>
-            </th>
+        <!-- Search Items / Fields -->
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-magnifying-glass-chart"></i>&nbsp;<?php 
+_e( 'Search Items / Fields', 'jobwp' );
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -90,43 +86,21 @@ esc_attr_e( $jobwp_search_item_font_size );
                 <code>px</code>
             </td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Radius', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+echo '<tr><td colspan="6" style="padding:0;"></td></tr>';
+$jobwp_upgrade_arr = [
+    'label'   => 'Border Radius & Font Color',
+    'icon'    => 'fa-solid fa-palette',
+    'message' => "Available in Professional",
+    'colspan' => 2,
+];
+$this->jobwp_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'jobwp' );
-?>:</label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . job_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'jobwp' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
         <!-- Search Button -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-toggle-off"></i>&nbsp;<?php 
 _e( 'Search Button', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -175,19 +149,9 @@ esc_attr_e( $jobwp_search_btn_border_color );
 ?>">
                 <div id="colorpicker"></div>
             </td>
-        </tr>
-        <!-- Search Button::Hover -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
-_e( 'Search Button :: Hover', 'jobwp' );
-?></span><hr>
-            </th>
-        </tr>
-        <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', 'jobwp' );
+_e( 'Hover Background Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -198,7 +162,7 @@ esc_attr_e( $jobwp_search_btn_bg_color_hvr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Color', 'jobwp' );
+_e( 'Hover Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -207,12 +171,14 @@ esc_attr_e( $jobwp_search_btn_font_color_hvr );
 ?>">
                 <div id="colorpicker"></div>
             </td>
+        </tr>
+        <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Border Color', 'jobwp' );
+_e( 'Hover Border Color', 'jobwp' );
 ?>:</label>
             </th>
-            <td>
+            <td colspan="5">
                 <input class="jobwp-wp-color" type="text" name="jobwp_search_btn_border_color_hvr" id="jobwp_search_btn_border_color_hvr" value="<?php 
 esc_attr_e( $jobwp_search_btn_border_color_hvr );
 ?>">
@@ -220,12 +186,10 @@ esc_attr_e( $jobwp_search_btn_border_color_hvr );
             </td>
         </tr>
         <!-- Reset Button -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
+        <tr class="jobwp-settings-section">
+            <td colspan="6" class="jobwp-settings-block-title"><i class="fa-solid fa-filter-circle-xmark"></i>&nbsp;<?php 
 _e( 'Reset Button', 'jobwp' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -262,18 +226,10 @@ esc_attr_e( $jobwp_reset_btn_border_color );
                 <div id="colorpicker"></div>
             </td>
         </tr>
-        <!-- Reset Button:Hover -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><span><?php 
-_e( 'Reset Button :: Hover', 'jobwp' );
-?></span><hr>
-            </th>
-        </tr>
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', 'jobwp' );
+_e( 'Hover Background Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -284,7 +240,7 @@ esc_attr_e( $jobwp_reset_btn_bg_color_hvr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Font Color', 'jobwp' );
+_e( 'Hover Font Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>
@@ -295,7 +251,7 @@ esc_attr_e( $jobwp_reset_btn_font_color_hvr );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Border Color', 'jobwp' );
+_e( 'Hover Border Color', 'jobwp' );
 ?>:</label>
             </th>
             <td>

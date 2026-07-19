@@ -93,6 +93,12 @@ class JobWp_Front {
         return $output;
     }
 
+    function jobwp_company_directory_view( $attr ) {
+        ob_start();
+        include dirname( __FILE__ ) . '/view/company-directory.php';
+        return ob_get_clean();
+    }
+
     /**
      * Function for loading shortcode apply now view
      */
@@ -114,6 +120,16 @@ class JobWp_Front {
             return JOBWP_PATH . 'front/view/single.php';
         }
         return $template;
+    }
+
+    function jobwp_single_template_only_content( $content ) {
+        // Check if we are viewing a single 'my_item' post and inside the main loop
+        if ( is_singular( 'jobs' ) && is_main_query() ) {
+            ob_start();
+            include JOBWP_PATH . 'front/view/job-details-content.php';
+            return ob_get_clean();
+        }
+        return $content;
     }
 
     function jobwp_add_ld_json() {

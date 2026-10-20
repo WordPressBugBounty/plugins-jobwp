@@ -19,7 +19,8 @@ class JobWp_Admin {
         Jobwp_Single_Styles_Settings,
         Jobwp_Email_Settings,
         Jobwp_ApplyForm_Content_Settings,
-        Jobwp_ApplyForm_Style_Settings
+        Jobwp_ApplyForm_Style_Settings,
+        JobWP_Applicaiton_Management
     ;
     private $jobwp_version;
 
@@ -150,12 +151,10 @@ class JobWp_Admin {
         }
         $jobwpGeneralMessage = false;
         if ( isset( $_POST['updateGeneralSettings'] ) ) {
-            if ( !isset( $_POST['jobwp_general_nonce_field'] ) || !wp_verify_nonce( $_POST['jobwp_general_nonce_field'], 'jobwp_general_action_filed' ) ) {
-                print 'Sorry, your nonce did not verify.';
-                exit;
-            } else {
-                $jobwpGeneralMessage = $this->jobwp_set_general_settings( $_POST );
+            if ( !isset( $_POST['jobwp_general_nonce_field'] ) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['jobwp_general_nonce_field'] ) ), 'jobwp_general_action_filed' ) ) {
+                wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'jobwp' ) );
             }
+            $jobwpGeneralMessage = $this->jobwp_set_general_settings( $_POST );
         }
         require_once JOBWP_PATH . 'admin/view/general.php';
     }
@@ -312,7 +311,6 @@ class JobWp_Admin {
         }
         $jobwpColumns = array(
             'cb'                      => __( 'Select All', 'jobwp' ),
-            'jobwp_list_sl'           => '#',
             'jobwp_applied_for'       => __( 'Applied For', 'jobwp' ),
             'jobwp_applicant_name'    => __( 'Name', 'jobwp' ),
             'jobwp_applicant_email'   => __( 'Email', 'jobwp' ),
@@ -728,44 +726,6 @@ class JobWp_Admin {
     }
 
     /**
-     *  Get all applicaitons
-     */
-    private function jobwp_get_all_applications() {
-        global $wpdb;
-        $table_name = $wpdb->base_prefix . 'jobwp_applied';
-        return $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$table_name} WHERE %d ORDER BY job_id DESC", 1 ) );
-    }
-
-    protected function jobwp_delete_single_application( $id ) {
-        if ( !current_user_can( 'edit_others_posts' ) ) {
-            exit;
-        }
-        global $wpdb;
-        $table_name = $wpdb->base_prefix . 'jobwp_applied';
-        $resume = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table_name} WHERE job_id = %d", $id ), ARRAY_A );
-        $success = $wpdb->query( $wpdb->prepare( "DELETE FROM {$table_name} WHERE job_id = %d", $id ) );
-        if ( $success ) {
-            $jobwpDir = wp_upload_dir();
-            $jobwpDir = $jobwpDir['basedir'];
-            $fileName = $jobwpDir . '/jobwp-resume/' . $resume['resume_name'];
-            if ( file_exists( $fileName ) ) {
-                unlink( $fileName );
-            }
-            return __( "Application has been deleted.", 'jobwp' );
-        }
-    }
-
-    function jobwp_export_applications_to_csv() {
-        if ( !current_user_can( 'manage_options' ) ) {
-            return;
-        }
-        if ( !isset( $_POST['jobwp_download_csv'] ) ) {
-            return;
-        }
-        check_admin_referer( 'jobwp_download_csv_action', 'jobwp_csv_nonce' );
-    }
-
-    /**
      * Company Extra Info Add Form
      */
     function jobwp_job_company_add_form_fields( $taxonomy ) {
@@ -876,6 +836,104 @@ class JobWp_Admin {
      */
     function jobwp_load_admin_sidebar( $pro_features_loc, $pro_features_global ) {
         include_once 'view/sidebar.php';
+    }
+
+    /**
+     * Add Deadline column to the Jobs admin table.
+     */
+    public function jobwp_add_deadline_column( $columns ) {
+        $new_columns = array();
+        foreach ( $columns as $key => $value ) {
+            if ( 'date' === $key ) {
+                $new_columns['jobwp_deadline'] = __( 'Deadline', 'jobwp' );
+            }
+            $new_columns[$key] = $value;
+        }
+        return $new_columns;
+    }
+
+    /**
+     * Display the deadline in the Jobs admin table.
+     */
+    public function jobwp_display_deadline_column( $column, $post_id ) {
+        if ( 'jobwp_deadline' !== $column ) {
+            return;
+        }
+        $deadline = get_post_meta( $post_id, 'jobwp_deadline', true );
+        if ( empty( $deadline ) ) {
+            echo '&mdash;';
+            return;
+        }
+        $date = DateTime::createFromFormat( '!Y-m-d', $deadline );
+        if ( $date ) {
+            echo esc_html( wp_date( get_option( 'date_format' ), $date->getTimestamp() ) );
+        } else {
+            echo esc_html( $deadline );
+        }
+    }
+
+    /**
+     * Register the sortable column
+     */
+    public function jobwp_sortable_deadline_column( $columns ) {
+        $columns['jobwp_deadline'] = 'jobwp_deadline';
+        return $columns;
+    }
+
+    /**
+     * Handle the sorting query for Deadline and Job Status
+     */
+    public function jobwp_sort_deadline_column( $query ) {
+        if ( !is_admin() || !$query->is_main_query() ) {
+            return;
+        }
+        $orderby = $query->get( 'orderby' );
+        if ( 'jobwp_deadline' === $orderby ) {
+            $query->set( 'meta_key', 'jobwp_deadline' );
+            $query->set( 'orderby', 'meta_value' );
+        } elseif ( 'jobwp_status' === $orderby ) {
+            $query->set( 'meta_key', 'jobwp_status' );
+            $query->set( 'orderby', 'meta_value' );
+        }
+    }
+
+    /**
+     * Add Status column to the Jobs admin table
+     */
+    public function jobwp_add_status_column( $columns ) {
+        $new_columns = array();
+        foreach ( $columns as $key => $value ) {
+            if ( 'date' === $key ) {
+                $new_columns['jobwp_status'] = __( 'Status', 'jobwp' );
+            }
+            $new_columns[$key] = $value;
+        }
+        return $new_columns;
+    }
+
+    /**
+     * Display Active / Inactive Jobs into the Status Column
+     */
+    public function jobwp_display_status_column( $column, $post_id ) {
+        if ( 'jobwp_status' !== $column ) {
+            return;
+        }
+        $status = get_post_meta( $post_id, 'jobwp_status', true );
+        if ( 'active' === $status ) {
+            echo esc_html__( 'Active', 'jobwp' );
+        } elseif ( 'inactive' === $status ) {
+            echo esc_html__( 'Inactive', 'jobwp' );
+        } else {
+            echo '&mdash;';
+        }
+    }
+
+    /**
+     * Make Status Column sortable
+     */
+    public function jobwp_sortable_status_column( $columns ) {
+        $columns['jobwp_status'] = 'jobwp_status';
+        return $columns;
     }
 
 }

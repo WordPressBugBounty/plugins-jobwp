@@ -74,17 +74,37 @@ class JobWp_Master {
             1
         );
         $this->jobwp_loader->add_action( 'admin_init', $jobwp_admin, JOBWP_PRFX . 'flush_rewrite' );
+        // Add Deadline column to the Jobs admin table
+        $this->jobwp_loader->add_filter( 'manage_jobs_posts_columns', $jobwp_admin, 'jobwp_add_deadline_column' );
+        $this->jobwp_loader->add_action(
+            'manage_jobs_posts_custom_column',
+            $jobwp_admin,
+            'jobwp_display_deadline_column',
+            10,
+            2
+        );
+        // Register the sortable column
+        $this->jobwp_loader->add_filter( 'manage_edit-jobs_sortable_columns', $jobwp_admin, 'jobwp_sortable_deadline_column' );
+        // Handle the sorting query
+        $this->jobwp_loader->add_action( 'pre_get_posts', $jobwp_admin, 'jobwp_sort_deadline_column' );
+        // Add Status column to the Jobs admin table
+        $this->jobwp_loader->add_filter( 'manage_jobs_posts_columns', $jobwp_admin, 'jobwp_add_status_column' );
+        // Display Active / Inactive Jobs into the Status Column
+        $this->jobwp_loader->add_action(
+            'manage_jobs_posts_custom_column',
+            $jobwp_admin,
+            'jobwp_display_status_column',
+            10,
+            2
+        );
+        // Make Status Column sortable
+        $this->jobwp_loader->add_filter( 'manage_edit-jobs_sortable_columns', $jobwp_admin, 'jobwp_sortable_status_column' );
     }
 
     function jobwp_trigger_front_hooks() {
         $jobwp_front = new JobWp_Front($this->jobwp_version());
-        $this->jobwp_loader->add_action( 'wp_enqueue_scripts', $jobwp_front, JOBWP_PRFX . 'front_assets' );
-        $this->jobwp_loader->add_filter(
-            'single_template',
-            $jobwp_front,
-            JOBWP_PRFX . 'single_template',
-            10
-        );
+        $this->jobwp_loader->add_action( 'wp_enqueue_scripts', $jobwp_front, 'jobwp_front_assets' );
+        //$this->jobwp_loader->add_filter('single_template', $jobwp_front, 'jobwp_single_template', 10);
         //$this->jobwp_loader->add_filter('the_content', $jobwp_front, 'jobwp_single_template_only_content', 10);
         //$this->jobwp_loader->add_filter('wp_head', $jobwp_front, 'jobwp_add_ld_json', -1);
         $jobwp_front->jobwp_load_shortcode();

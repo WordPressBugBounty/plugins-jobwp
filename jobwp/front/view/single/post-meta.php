@@ -13,6 +13,9 @@ $jobs_level = wp_get_post_terms( $post->ID, 'jobs_level', array(
 $jobs_location = wp_get_post_terms( $post->ID, 'jobs_location', array(
     'fields' => 'all',
 ) );
+$jobs_category = wp_get_post_terms( $post->ID, 'jobs_category', array(
+    'fields' => 'all',
+) );
 $bo_experience = get_post_meta( $post->ID, 'jobwp_experience', true );
 $bo_vacancies = get_post_meta( $post->ID, 'jobwp_vacancies', true );
 $bo_job_nature = get_post_meta( $post->ID, 'jobwp_nature', true );
